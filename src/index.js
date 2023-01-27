@@ -153,3 +153,62 @@ ReactDom.render(
     </>,
     rootElement
 );
+
+// Internal CSS and Inline CSS
+// inorder to use style property we have to pass the css as JSON format
+// transform all attributes names to camel case ex- text-transform becomes textTransform
+
+const heading = {
+    color : '#fa9191',
+    textTransform : 'capitalize',
+    textAlign : 'center',
+    fontWeight : 'bold',
+    textShadow : '0px 2px 4px #ffe9c5',
+    margin : '70px 0',
+    fontFamily: '"Teko", sans-serif'
+}
+
+ReactDom.render(
+    <>
+        <h1 style={heading}> {` My name is ${fname} ${lname}`} </h1>
+        <div className="img-div">
+            <img src={img1} alt="Image1 here" />
+            <img src={img2} alt="Image2 here" />
+            <a href={links} target="_blank" rel="noreferrer">
+                <img src={img3} alt="Image3 here" />
+            </a>
+        </div>
+    </>,
+    rootElement
+);
+
+// Challenge 3: Creating a simple greeting web page.
+
+let curr = new Date();
+curr = curr.getHours();
+let greeting = '';
+const cssStyle = {};
+if(curr < 12){
+    greeting = 'Good Morning';
+    cssStyle.color = 'green';
+}
+else if(curr < 19){
+    greeting = 'Good Afternoon';
+    cssStyle.color = 'yellow';
+}
+else{
+    greeting = 'Good Night';
+    cssStyle.color = 'black';
+}
+
+ReactDom.render(
+    <>
+        <div className='challenge3'>
+            <h1 className='challenge3h1'>
+                Hello Sir,
+                <span style={cssStyle}> {greeting}</span>
+            </h1>
+        </div>
+    </>,
+    rootElement
+);
