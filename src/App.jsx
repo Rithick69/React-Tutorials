@@ -1,13 +1,10 @@
 import React from "react";
-import List from "./components/List";
-import Heading from "./components/Heading";
+import "./styles.css";
+import C3div from "./components/C3div";
 
 function App(){
     return (
-        <>
-            <Heading />
-            <List />
-        </>
+        <C3div/>
     );
 }
 
