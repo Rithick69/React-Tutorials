@@ -1,22 +1,19 @@
-const myfav = "Thapa";
+import React from "react";
+import { add, sub, div, mul } from "./components/Calc";
 
-const favprog = "React js";
+//Calculator
 
-function myName() {
-	let name = "vinod";
-	return name;
+function App() {
+	return (
+		<>
+			<ul>
+				<li>Sum of two no is: {add(40, 4)}</li>
+				<li>Sub of two no is: {sub(30, 4)}</li>
+				<li>Div of two no is: {div(10, 3)}</li>
+				<li>Mult of two no is: {mul(10, 4)}</li>
+			</ul>
+		</>
+	);
 }
-function myNames() {
-	let names = "vinod dikon";
-	return names;
-}
 
-export default myfav;
-// default can only have one value
-// we use default when we don't have any other variable or function to export.
-// it quite like the switch case default condition..
-// the name of the variable can be anything while importing in the index page.
-
-export { myName, myNames, favprog };
-
-//the name of the variable needs to be exactly same while importing in the index page.
+export default App;
