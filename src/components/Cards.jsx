@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles.css";
 // To access all the props as objects we write props in the function
 function Cards(props) {
 	//console.log(props);
