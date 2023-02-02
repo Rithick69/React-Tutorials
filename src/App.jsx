@@ -1,33 +1,13 @@
 import React from "react";
-import Cards from "./components/Cards";
-import Sdata from "./components/Sdata";
+import Amazon from "./components/Amazon";
+import Netflix from "./components/Netflix";
 
-// Filtering rendered data using if and else
+// Using Ternary Operators and components to filter out rendered data.
 
-const favSeries = "Dark";
+const favSeries = "netflix";
 
 const FavS = () => {
-	if (favSeries === "Dark") {
-		return (
-			<Cards
-				key={Sdata[1].id}
-				imgsrc={Sdata[1].imgsrc}
-				title={Sdata[1].title}
-				sname={Sdata[1].sname}
-				link={Sdata[1].link}
-			/>
-		);
-	} else {
-		return (
-			<Cards
-				key={Sdata[0].id}
-				imgsrc={Sdata[0].imgsrc}
-				title={Sdata[0].title}
-				sname={Sdata[0].sname}
-				link={Sdata[0].link}
-			/>
-		);
-	}
+	return favSeries === "netflix" ? <Netflix /> : <Amazon />;
 };
 
 const App = () => (
