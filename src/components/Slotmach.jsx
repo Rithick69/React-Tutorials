@@ -1,4 +1,6 @@
 import React from "react";
+import MatchFalse from "./MatchFalse";
+import MatchTrue from "./MatchTrue";
 
 const SlotM = (props) => {
 	// Object Destructuring
@@ -10,29 +12,9 @@ const SlotM = (props) => {
 	let { x, y, z } = props;
 
 	if (x === y && y === z) {
-		return (
-			<>
-				<div className="slot_inner">
-					<h1>
-						{x} {y} {z}
-					</h1>
-					<h1> This is Matching </h1>
-					<hr />
-				</div>
-			</>
-		);
+		return <MatchTrue x={props.x} y={props.y} z={props.z} />;
 	} else {
-		return (
-			<>
-				<div className="slot_inner">
-					<h1>
-						{x} {y} {z}
-					</h1>
-					<h1> This is Not Matching </h1>
-					<hr />
-				</div>
-			</>
-		);
+		return <MatchFalse x={props.x} y={props.y} z={props.z} />;
 	}
 };
 
