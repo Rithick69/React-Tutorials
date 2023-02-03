@@ -1,20 +1,23 @@
 import React from "react";
-import Amazon from "./components/Amazon";
-import Netflix from "./components/Netflix";
+import SlotM from "./components/Slotmach";
 
-// Using Ternary Operators and components to filter out rendered data.
-
-const favSeries = "netflix";
-
-const FavS = () => {
-	return favSeries === "netflix" ? <Netflix /> : <Amazon />;
-};
+// Creating a mini "Slot Machine" game
 
 const App = () => (
 	<>
-		<h1 className="heading_style">List of top 5 Netflix shows</h1>
-
-		<FavS />
+		<h1 className="heading_style">
+			Welcome to <span style={{ fontWeight: "bold" }}>Slot Machine Game</span>
+		</h1>
+		<div className="slotmachine">
+			{/* Installed emojisense extension for emoji */}
+			<SlotM x=" 😄 " y=" 😄 " z=" 😄 " />
+			<hr />
+			<SlotM x=" 🎅 " y=" 🎅 " z=" 😄 " />
+			<hr />
+			<SlotM x=" 🍎 " y=" 🍎 " z=" 🍎 " />
+			<hr />
+			<SlotM x=" 🍌 " y=" 😆 " z=" 🍎 " />
+		</div>
 	</>
 );
 
