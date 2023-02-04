@@ -1,5 +1,3 @@
-import Amazon from "./Amazon";
-
 const Sdata = [
 	{
 		id: 1,
