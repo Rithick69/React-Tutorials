@@ -1,26 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
-import SlotM from "./components/Slotmach";
-import Slotdata from "./components/Slotdata";
 
-// Creating a mini "Slot Machine" game
+// Learning React Hooks
+// Created a webpage where count is displayed and increments by 1 when user
+// clicks the button
 
-const App = () => (
-	<>
-		<h1 className="heading_style">
-			Welcome to{" "}
-			<span style={{ fontWeight: "bold", backgroundColor: "transparent" }}>
-				Slot Machine Game
-			</span>
-		</h1>
-		<div className="slotmachine">
-			{/* Installed emojisense extension for emoji */}
+const App = () => {
+	// Hooks can only be called inside a functional component.
+	//
+	// const state = useState();
+	// console.log(state);
+	// useState is an array that return 2 items : [undefined,f]
+	// "undefined" stands for state object and "f" stands for updated function
+	// useState returns 2 items, Current Data, Updated function / Data
+	// useState(data) here data is the initial value.
+	// For these reasons useState is called hooks in react.
+	//
+	// Object Destruct
+	const [count, setCount] = useState(0);
+	// setCount is a function that will use the initial data "5" and return updated
+	// value to count.
+	const IncNum = () => {
+		setCount(count + 1);
+		//console.log("clicked", count++);
+	};
 
-			{Slotdata.map((val) => {
-				return <SlotM key={val.id} x={val.x} y={val.y} z={val.z} />;
-			})}
-		</div>
-	</>
-);
+	return (
+		<>
+			{/* In order to get the value of count dynamically we will use hooks,
+			Hooks allows us to change the state of a var  i.e to be rendered.*/}
+
+			<h1> {count} </h1>
+			{/* Adding a click event */}
+			<button onClick={IncNum}> Click Me</button>
+		</>
+	);
+};
 
 export default App;
