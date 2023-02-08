@@ -10,6 +10,54 @@
 	font-family: "Josefin Sans", "Arial Narrow", Arial sans-serif;
 }
 
+/* Hooks challenge */
+
+.center_hooks_div {
+	width: 25%;
+	height: 60vh;
+	background: #f4f4f4;
+	box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.5);
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.heading {
+	color: white;
+	background: transparent;
+	background-color: #8566aa;
+	padding: 6px 0 2px 0;
+	margin-bottom: 10px;
+	text-shadow: 0 2px 2px black;
+	font-size: 50px;
+	width: 100%;
+}
+
+.btn_div {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: row;
+}
+
+.buttons {
+	min-height: 40px;
+	width: 40px;
+	border-radius: 5%;
+	border-color: transparent;
+	background-color: #8566aa;
+	color: #fff;
+	font-size: 40px;
+	border: none;
+	outline: none;
+	margin-top: 30px;
+	padding: 0 10px;
+	box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
 /* ToDo List */
 
 .main_div {
@@ -116,6 +164,9 @@ ol li {
 }
 
 @media (max-width: 768px) {
+	.center_hooks_div {
+		width: 55%;
+	}
 	.center_div {
 		width: 55%;
 	}
