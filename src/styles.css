@@ -85,7 +85,9 @@
 	box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.5);
 	border-radius: 15px;
 }
-
+span {
+	color: #8566aa;
+}
 h1 {
 	color: white;
 	background: transparent;
@@ -119,6 +121,9 @@ input {
 	box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
+.todo_button span {
+	color: #fff !important;
+}
 .todo_button:hover {
 	background-color: #20bf6b !important;
 }
