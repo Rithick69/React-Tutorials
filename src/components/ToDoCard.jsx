@@ -53,7 +53,7 @@ const ToDoCard = () => {
 							marginTop: "20px",
 						}}
 					>
-						<Clock classNam=".span" />
+						<Clock />
 					</h2>
 					<br />
 					<h1> ToDo List</h1>
