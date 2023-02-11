@@ -4,9 +4,19 @@ import TodoCard from "./components/ToDoCard";
 import { Add, Delete } from "@material-ui/icons";
 import { Button, Tooltip } from "@material-ui/core";
 
-// Hooks Challenge
+// Digital clock using npm package
 
 const App = () => {
+	return (
+		<>
+			<TodoCard />
+		</>
+	);
+};
+
+// Hooks Challenge
+
+const App1 = () => {
 	const [CurrData, setData] = useState(0);
 
 	const Increment = () => {
@@ -47,7 +57,7 @@ const App = () => {
 
 // TODO LIST using ReactJS
 
-const App1 = () => {
+const App2 = () => {
 	return (
 		<>
 			<TodoCard />
