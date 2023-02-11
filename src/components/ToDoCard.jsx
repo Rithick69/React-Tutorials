@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import TodoList from "./ToDoList";
+import Clock from "react-digital-clock";
+import { Add } from "@material-ui/icons";
+import { Tooltip, Button } from "@material-ui/core";
 
 // TODO LIST using ReactJS
 
@@ -45,6 +48,13 @@ const ToDoCard = () => {
 		<>
 			<div className="main_div">
 				<div className="center_div">
+					<h2
+						style={{
+							marginTop: "20px",
+						}}
+					>
+						<Clock classNam=".span" />
+					</h2>
 					<br />
 					<h1> ToDo List</h1>
 					<br />
@@ -54,8 +64,11 @@ const ToDoCard = () => {
 						value={inputList}
 						onChange={itemEvent}
 					/>
-					<button onClick={listOfItems}> + </button>
-
+					<Tooltip title="Add Item">
+						<Button className="todo_button" onClick={listOfItems}>
+							<Add />
+						</Button>
+					</Tooltip>
 					<ol>
 						{/* <li>{todoItem}</li> */}
 						{/* Using map method to display the items of the 'Items' array */}
