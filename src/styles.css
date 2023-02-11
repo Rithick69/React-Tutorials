@@ -101,29 +101,26 @@ input {
 	top: 10px;
 	border: none;
 	background: transparent;
-	font-size: 5;
+	font-size: 20px;
 	font-weight: 500;
 	width: 60%;
 	border-bottom: 2px solid #8566aa;
 	outline: none;
 }
 
-button {
+.todo_button {
 	min-height: 40px;
-	width: 40px;
-	border-radius: 50%;
-	border-color: transparent;
-	background-color: #8566aa;
-	color: #fff;
-	font-size: 40px;
-	border: none;
-	outline: none;
-	margin-left: 10px;
+	max-width: 40px;
+	min-width: 20px !important;
+	border-radius: 50% !important;
+	background-color: #8566aa !important;
+	color: white !important;
+	margin-left: 10px !important;
 	box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
-button:hover {
-	background-color: #20bf6b;
+.todo_button:hover {
+	background-color: #20bf6b !important;
 }
 
 ol {
@@ -150,13 +147,14 @@ ol li {
 }
 
 .todo_style .fa-times {
-	width: 20px;
-	height: 20px;
+	width: 25px;
+	height: 25px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background-color: #8566aa;
 	border-radius: 50%;
+	padding: 5px;
 	margin: 0 15px 0 35px;
 	color: aliceblue;
 	box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
