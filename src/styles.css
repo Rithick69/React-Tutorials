@@ -124,7 +124,6 @@ input {
 .todo_button span {
 	color: #fff !important;
 }
-
 .todo_button:hover {
 	background-color: #20bf6b !important;
 }
