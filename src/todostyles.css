@@ -1,0 +1,368 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* background-color: #d2dbdd; */
+	/* font-family: "Josefin Sans", "Arial Narrow", Arial sans-serif; */
+	font-family: "Roboto", sans-serif;
+}
+
+/* Hooks challenge */
+
+.center_hooks_div {
+	width: 25%;
+	height: 60vh;
+	background: #f4f4f4;
+	box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.5);
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.heading {
+	color: black;
+	background: transparent;
+	padding: 6px 0 2px 0;
+	margin-bottom: 10px;
+	text-shadow: 10px 5px 8px gray;
+	font-size: 80px;
+	font-weight: 100;
+	width: 100%;
+	margin-bottom: 50px;
+}
+
+.btn_div {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: row;
+}
+
+.buttons {
+	min-height: 40px;
+	width: 40px;
+	border-radius: 5%;
+	border-color: transparent;
+	font-size: 40px;
+	border: none;
+	outline: none;
+	margin-top: 30px;
+	padding: 0 10px;
+	box-shadow: 2.5px 2.5px 8px 2px rgba(0, 0, 0, 0.3);
+}
+
+.btn_green:hover {
+	color: #2ed573;
+}
+.btn_red:hover {
+	color: #ff4757;
+}
+
+/* ToDo List */
+
+.main_div {
+	width: 100%;
+	height: 100vh;
+	background: #2ed573;
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+	text-align: center;
+}
+
+.center_div {
+	width: 25%;
+	height: 80vh;
+	background: #f4f4f4;
+	box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.5);
+	border-radius: 15px;
+}
+span {
+	color: #8566aa;
+}
+h1 {
+	color: white;
+	background: transparent;
+	background-color: #8566aa;
+	padding: 6px 0 2px 0;
+	margin-bottom: 10px;
+	text-shadow: 0 2px 2px black;
+}
+
+input {
+	text-align: center;
+	height: 30px;
+	top: 10px;
+	border: none;
+	background: transparent;
+	font-size: 20px;
+	font-weight: 500;
+	width: 60%;
+	border-bottom: 2px solid #8566aa;
+	outline: none;
+}
+
+.todo_button {
+	min-height: 40px;
+	max-width: 40px;
+	min-width: 20px !important;
+	border-radius: 50% !important;
+	background-color: #8566aa !important;
+	color: white !important;
+	margin-left: 10px !important;
+	box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.todo_button span {
+	color: #fff !important;
+}
+.todo_button:hover {
+	background-color: #20bf6b !important;
+}
+
+ol {
+	margin-top: 30px;
+}
+
+ol li {
+	padding-left: 0px;
+	text-align: left;
+	font-size: 20px;
+	font-weight: 500;
+	min-height: 40px;
+	display: flex;
+	align-items: center;
+	color: #8566aa;
+	text-transform: capitalize;
+}
+
+.todo_style {
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	align-items: center;
+}
+
+.todo_style .fa-times {
+	width: 25px;
+	height: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #8566aa;
+	border-radius: 50%;
+	padding: 5px;
+	margin: 0 15px 0 35px;
+	color: aliceblue;
+	box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.todo_style .fa-times:hover {
+	background-color: crimson;
+}
+
+.todo_style .fa-times .list_style {
+	color: crimson;
+}
+
+@media (max-width: 768px) {
+	.center_hooks_div {
+		width: 55%;
+	}
+	.center_div {
+		width: 55%;
+	}
+	.todo_style .fa-times {
+		margin: 0 15px 0 15px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	button {
+		margin-left: 5px;
+		min-height: 40px;
+		width: 40px;
+		color: #fff;
+		font-size: 30px;
+	}
+}
+
+/* React Hooks */
+
+.main1_div {
+	width: 100%;
+	height: 100vh;
+	background: #8e44ad;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+header1 {
+	color: white;
+	background: transparent;
+	text-shadow: 0 2px 2px black;
+}
+
+form1 {
+	width: 50%;
+	background: transparent;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 20px;
+}
+
+input1 {
+	width: 50%;
+	padding: 10px 20px;
+	border: none;
+	margin: 20px 0;
+	outline: none;
+	text-align: center;
+}
+
+/* Chrome, Safari, Edge, Opera */
+/* input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} */
+
+/* Firefox */
+/* input[type="number"] {
+  -moz-appearance: textfield;
+} */
+
+button1 {
+	line-height: 24px;
+	padding: 0 20px;
+	background: #9b59b6;
+	color: white;
+	border: 2px solid #ecf0f1;
+	outline: none;
+	border-radius: 5px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+/* Slot Machine and Netflix webpage */
+
+.heading_style {
+	padding: 30px 0;
+	text-align: center;
+	font-family: "cursive";
+	text-transform: uppercase;
+	font-size: 1.5rem;
+	letter-spacing: px;
+	font-weight: 500;
+	color: #868686;
+	margin-bottom: 30px;
+	background-color: #fff;
+}
+
+.slothouse {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.slot_inner {
+	padding: 5px;
+	text-align: center;
+	font-size: 9px;
+}
+
+.slotmachine {
+	background-color: bisque;
+	width: 22.5%;
+	border: 3px solid gray;
+	line-height: 30px;
+	margin-top: 20px;
+}
+
+.cards {
+	width: 100%;
+	height: auto;
+}
+
+.card {
+	margin: 6%;
+	transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+	background-color: white;
+	width: 21.25%;
+	border-radius: 12px;
+	box-shadow: 0px 14px 10px -7px rgba(0, 0, 0, 0.1);
+	float: left;
+}
+
+.card:hover {
+	box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+	transform: scale(1.05, 1.05);
+}
+
+.card__img {
+	width: 100%;
+	height: 235px;
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+}
+
+.card__info {
+	background-color: #fff;
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+	padding: 16px 24px 24px 24px;
+}
+
+.card__category {
+	text-transform: uppercase;
+	font-size: 13px;
+	letter-spacing: 2px;
+	font-weight: 500;
+	color: #868686;
+	background-color: #fff;
+}
+
+.card__title {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	font-family: "cursive";
+	background-color: white;
+	text-transform: capitalize;
+}
+
+/* button {
+	padding: 5px 8px;
+	text-transform: uppercase;
+	font-size: 13px;
+	font-weight: 500;
+	outline: none;
+	border: 1px solid black;
+	background-color: #fff;
+	color: #868686;
+	cursor: pointer;
+} */
+
+@media (max-width: 768px) {
+	.card {
+		float: none;
+		margin: 5%;
+		width: 90%;
+	}
+	.slotmachine {
+		width: 60%;
+	}
+}
