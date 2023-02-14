@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bitter&family=Raleway&display=swap");
 
 * {
 	margin: 0;
@@ -11,7 +12,8 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	min-height: 100vh;
+	height: auto;
 	width: 100%;
 	background-image: linear-gradient(#fcf5f5, #eff4fd);
 }
@@ -42,11 +44,12 @@ h1 {
 	padding: 20px 0 20px 20px;
 	background: #f1f4ff;
 	border-radius: 5px;
+	justify-content: flex-start;
+	align-items: center;
 }
 
-.something {
+h3 {
 	margin-left: 30px;
-	font-family: "Mate SC", serif;
 	color: #303243;
 	font-family: "Raleway", sans-serif;
 	word-spacing: 1px;
