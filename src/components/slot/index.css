@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* background-color: #d2dbdd; */
+	/* font-family: "Josefin Sans", "Arial Narrow", Arial sans-serif; */
+	font-family: "Roboto", sans-serif;
+}
+
+h1 {
+	padding: 30px 0;
+	text-align: center;
+	font-family: "cursive";
+	text-transform: uppercase;
+	font-size: 1.5rem;
+	letter-spacing: px;
+	font-weight: 500;
+	color: #868686;
+	margin-bottom: 30px;
+	background-color: #fff;
+}
+
+.slothouse {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.slot_inner {
+	padding: 5px;
+	text-align: center;
+	font-size: 9px;
+}
+
+.slotmachine {
+	background-color: bisque;
+	width: 22.5%;
+	border: 3px solid gray;
+	line-height: 30px;
+	margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+	.slotmachine {
+		width: 60%;
+	}
+}

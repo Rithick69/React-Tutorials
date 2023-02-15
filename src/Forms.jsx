@@ -156,7 +156,7 @@ const App3 = () => {
 				<p style={{ background: "transparent" }}>{fullName.email}</p>
 				<p style={{ background: "transparent" }}>{fullName.mobile}</p>
 				{/* While using forms we can use form properties like onSubmit etc
-          to call functions and not rely on custom button events*/}
+				to call functions and not rely on custom button events*/}
 				<form onSubmit={onSubmit}>
 					<input
 						type="text"
@@ -216,7 +216,7 @@ const App2 = () => {
 			<div className="main_div">
 				<h1>Hello {fullName}</h1>
 				{/* While using forms we can use form properties like onSubmit etc
-          to call functions and not rely on custom button events*/}
+				to call functions and not rely on custom button events*/}
 				<form onSubmit={nameEvent}>
 					<input
 						type="text"
