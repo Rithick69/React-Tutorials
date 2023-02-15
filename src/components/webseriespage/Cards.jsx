@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles.css";
-import Heading from "./Heading";
-import Image from "./Image";
+import Heading from "../Heading";
+import Image from "../Image";
 
 // To access all the props as objects we write props in the function
 const Cards = (props) => (
