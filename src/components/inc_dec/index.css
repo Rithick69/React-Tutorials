@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* background-color: #d2dbdd; */
+	/* font-family: "Josefin Sans", "Arial Narrow", Arial sans-serif; */
+	font-family: "Roboto", sans-serif;
+}
+
+/* Hooks challenge */
+
+.main_div {
+	width: 100%;
+	height: 100vh;
+	background: #2ed573;
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+	text-align: center;
+}
+
+.center_hooks_div {
+	width: 25%;
+	height: 60vh;
+	background: #f4f4f4;
+	box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.5);
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.heading {
+	color: black;
+	background: transparent;
+	padding: 6px 0 2px 0;
+	margin-bottom: 10px;
+	text-shadow: 10px 5px 8px gray;
+	font-size: 80px;
+	font-weight: 100;
+	width: 100%;
+	margin-bottom: 50px;
+}
+
+.btn_div {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: row;
+}
+
+.buttons {
+	min-height: 40px;
+	width: 40px;
+	border-radius: 5%;
+	border-color: transparent;
+	font-size: 40px;
+	border: none;
+	outline: none;
+	margin-top: 30px;
+	padding: 0 10px;
+	box-shadow: 2.5px 2.5px 8px 2px rgba(0, 0, 0, 0.3);
+}
+
+.btn_green:hover {
+	color: #2ed573;
+}
+.btn_red:hover {
+	color: #ff4757;
+}
+
+@media (max-width: 768px) {
+	.center_hooks_div {
+		width: 55%;
+	}
+	button {
+		margin-left: 5px;
+		min-height: 40px;
+		width: 40px;
+		color: #fff;
+		font-size: 30px;
+	}
+}
