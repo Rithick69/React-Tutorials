@@ -1,11 +1,12 @@
 import React from "react";
+import logo from "./Image/logo.png";
 
 const Header = () => {
 	return (
 		<>
 			<div className="header">
-				<img src="" alt="logo" width="70" height="50" />
-				<h1>Notes</h1>
+				<img src={logo} alt="logo" width="50" height="40" />
+				<h1 style={{ margin: "5px 0" }}>otes</h1>
 			</div>
 		</>
 	);
