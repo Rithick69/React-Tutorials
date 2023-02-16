@@ -16,7 +16,7 @@
 	align-items: center;
 	padding-left: 50px;
 	color: white;
-	box-shadow: 5px 3px 15px -5px rgba(0, 0, 0, 0.1);
+	box-shadow: 5px 3px 15px -5px rgba(0, 0, 0, 0.5);
 }
 
 .main_notes {
@@ -37,7 +37,7 @@ form {
 	min-height: 50px;
 	color: #ecf0f1;
 	padding: 15px 10px 5px 10px;
-	box-shadow: 3px 5px 15px -5px rgba(0, 0, 0, 0.1);
+	box-shadow: 3px 5px 15px -5px rgba(0, 0, 0, 0.5);
 	border-radius: 10px;
 	position: relative;
 }
@@ -72,7 +72,7 @@ textarea {
 	cursor: pointer;
 	background-color: #fff !important;
 	border-radius: 50% !important;
-	box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.1);
+	box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.5);
 }
 
 .MuiButton-root .plus_sign {
@@ -85,7 +85,7 @@ textarea {
 }
 
 .MuiButton-root:hover {
-	background: #f4b400;
+	background: #f4b400 !important;
 }
 
 .MuiButton-root:hover .plus_sign {
@@ -126,7 +126,7 @@ textarea {
 	background: transparent;
 	cursor: pointer;
 	outline: none;
-	box-shadow: 3px 3px 15px -10px rgba(0, 0, 0, 0.1);
+	box-shadow: 3px 3px 15px -10px rgba(0, 0, 0, 0.5);
 	border-radius: 50%;
 }
 
@@ -147,4 +147,5 @@ footer {
 	width: 100%;
 	position: absolute;
 	bottom: 0;
+	text-align: center;
 }
