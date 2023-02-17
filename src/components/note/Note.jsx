@@ -1,13 +1,13 @@
 import React from "react";
 import { DeleteOutline } from "@material-ui/icons";
 
-const Note = () => {
+const Note = (props) => {
 	return (
 		<>
 			<div className="note">
-				<h1>title</h1>
+				<h1>{props.title}</h1>
 				<br />
-				<p>this is the content</p>
+				<p>{props.content}</p>
 				<button className="btn">
 					<DeleteOutline className="deleteIcon" />
 				</button>
