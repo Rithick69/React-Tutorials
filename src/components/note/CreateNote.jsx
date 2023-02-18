@@ -3,6 +3,8 @@ import { Button } from "@material-ui/core";
 import { Add } from "@material-ui/icons";
 
 const CreateNote = (props) => {
+	// To expand and contract the input field.
+	const [expand, setExpand] = useState(false);
 	const [note, setNote] = useState({
 		title: "",
 		content: "",
@@ -31,18 +33,28 @@ const CreateNote = (props) => {
 			content: "",
 		});
 	};
+	const expandIt = (prev) => {
+		setExpand(true);
+	};
+	const normal = (prev) => {
+		setExpand(false);
+	};
+
 	return (
 		<>
-			<div className="main_notes">
+			<div className="main_notes" onDoubleClick={normal}>
 				<form>
-					<input
-						type="text"
-						name="title"
-						value={note.title}
-						onChange={InputEvent}
-						placeholder="Title"
-						autoComplete="off"
-					/>
+					{/* If expand is true then show title else show only textarea */}
+					{expand ? (
+						<input
+							type="text"
+							name="title"
+							value={note.title}
+							onChange={InputEvent}
+							placeholder="Title"
+							autoComplete="off"
+						/>
+					) : null}
 					<textarea
 						rows=""
 						column=""
@@ -50,13 +62,15 @@ const CreateNote = (props) => {
 						value={note.content}
 						onChange={InputEvent}
 						placeholder="Write a note ..."
+						onClick={expandIt}
 					></textarea>
 
 					{/* We need to add each note to an array after click of add button */}
-
-					<Button onClick={addEvent}>
-						<Add className="plus_sign" />
-					</Button>
+					{expand ? (
+						<Button onClick={addEvent}>
+							<Add className="plus_sign" />
+						</Button>
+					) : null}
 				</form>
 			</div>
 		</>
