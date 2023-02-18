@@ -16,6 +16,14 @@ const App = () => {
 			return [...prev, note];
 		});
 	};
+	// For Deleting a note with help of id
+	const onDelete = (id) => {
+		setAddItem((prev) => {
+			return prev.filter((element, index) => {
+				return index !== id;
+			});
+		});
+	};
 	return (
 		<>
 			<Header />
@@ -29,6 +37,7 @@ const App = () => {
 						id={index}
 						title={val.title}
 						content={val.content}
+						deleteItem={onDelete}
 					/>
 				);
 			})}
