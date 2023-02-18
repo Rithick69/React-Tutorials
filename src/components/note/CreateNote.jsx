@@ -32,11 +32,12 @@ const CreateNote = (props) => {
 			title: "",
 			content: "",
 		});
+		setExpand(false);
 	};
-	const expandIt = (prev) => {
+	const expandIt = () => {
 		setExpand(true);
 	};
-	const normal = (prev) => {
+	const normal = () => {
 		setExpand(false);
 	};
 
