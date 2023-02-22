@@ -29,7 +29,7 @@ const Navbar = () => {
 					About Us
 				</NavLink>
 				<NavLink
-					to="/contact/*"
+					to="/contact"
 					className={({ isActive }) => (isActive ? "active_class" : undefined)}
 				>
 					Contact
