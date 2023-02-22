@@ -1,9 +1,9 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import CompA from "./components/react-pokemon/CompA";
+import Routers from "./practice_utils/react_routers/Routers";
 
 const App = () => {
-	return <CompA />;
+	return <Routers />;
 };
 
 export default App;
