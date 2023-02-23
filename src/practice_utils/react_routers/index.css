@@ -1,4 +1,4 @@
-a.active_class {
+.active {
 	color: greenyellow;
 	border-bottom: 1px solid red;
 	text-decoration: none;

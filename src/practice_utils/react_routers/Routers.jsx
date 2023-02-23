@@ -1,9 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import MainHeader from "./MainHeader";
+import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
 import Error from "./Error";
-import Navbar from "./Navbar";
 import "./index.css";
 // React Routers
 
@@ -16,26 +17,26 @@ import "./index.css";
 // These are usually referred to as SPAs - single-page applications. At its core, what React Router does is conditionally render certain components to display depending on the route being used in the URL
 // (/ for the home page, /about for the about page, etc.).
 
+// Routes and Route acts as a switch case element whereby the page renders whichever url is selected.
+
 const Routers = () => {
-	const Home = () => {
-		return <h1>Hello, This is Home</h1>;
-	};
 	const Name = () => {
 		return <h1>Hello, I am Rithick</h1>;
 	};
 	return (
-		// Routes and Route acts as a switch case element whereby the page renders whichever url is selected.
-		// Path stands for the url and element is the component to be rendered.
-		// Exact is a very useful property by which we can specify a url and avoid rendering mistakes because of using the same paths.
 		<>
-			<Navbar />
+			{/* Nested Routing */}
+			{/* 'index' prop add the component by default to its parent and displays it/ */}
 			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/about" element={<About />} />
-				<Route path="contact/*" element={<Contact />} />
-				<Route path="/contact/name" element={<Name />} />
-				{/* 404 error page */}
-				<Route element={<Error />} />
+				<Route path="/" element={<MainHeader />}>
+					<Route index element={<Home />} />
+					<Route path="about" element={<About />} />
+					<Route path="contact" element={<Contact />}>
+						<Route path="name" element={<Name />} />
+					</Route>
+					{/* 404 error page */}
+					<Route path="*" element={<Error />} />
+				</Route>
 			</Routes>
 		</>
 	);
