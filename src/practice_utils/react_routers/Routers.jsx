@@ -21,7 +21,7 @@ import "./index.css";
 
 const Routers = () => {
 	const Name = () => {
-		return <h1>Hello, I am Rithick</h1>;
+		return <h1 style={{ marginTop: "20px" }}>Hello, I am Rithick</h1>;
 	};
 	return (
 		<>
