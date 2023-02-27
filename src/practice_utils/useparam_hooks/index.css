@@ -1,0 +1,18 @@
+a {
+	color: #61dafb;
+	text-decoration: none;
+}
+
+.active {
+	color: greenyellow;
+	border-bottom: 1px solid red;
+	text-decoration: none;
+}
+
+.menu_style {
+	width: 100%;
+	line-height: 60px;
+	background-color: #20232a;
+	display: flex;
+	justify-content: space-around;
+}

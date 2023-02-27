@@ -1,10 +1,12 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import MainHeader from "./MainHeader";
-import Home from "../react_routers/Home";
-import About from "../react_routers/About";
-import Contact from "../react_routers/Contact";
-import Error from "../react_routers/Error";
+import Home from "./Home";
+import About from "./About";
+import Contact from "./Contact";
+import Error from "./Error";
+import Services from "./Services.jsx";
+import User from "./User";
 import "./index.css";
 // React Routers
 
@@ -31,8 +33,10 @@ const Routers = () => {
 				<Route path="/" element={<MainHeader />}>
 					<Route index element={<Home />} />
 					<Route path="about" element={<About name="About" />} />
+					<Route path="services" element={<Services />} />
 					<Route path="contact" element={<Contact />} />
 					<Route path="/contact/:name" element={<Name />} />
+					<Route path="/user/:fname" element={<User />} />
 					{/* 404 error page */}
 					<Route path="*" element={<Error />} />
 				</Route>

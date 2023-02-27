@@ -1,9 +1,8 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import CovidApp from "./components/covid_api/CovidApp";
+import Routers from "./practice_utils/useparam_hooks/Routers";
 
 const App = () => {
-	return <CovidApp />;
+	return <Routers />;
 };
-
 export default App;
