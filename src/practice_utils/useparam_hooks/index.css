@@ -5,7 +5,6 @@ a {
 
 .active {
 	color: greenyellow;
-	border-bottom: 1px solid red;
 	text-decoration: none;
 }
 
@@ -15,4 +14,9 @@ a {
 	background-color: #20232a;
 	display: flex;
 	justify-content: space-around;
+}
+
+.name_style {
+	color: red;
+	margin-left: 20px;
 }

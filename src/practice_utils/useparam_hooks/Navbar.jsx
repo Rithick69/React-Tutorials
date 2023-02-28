@@ -18,7 +18,7 @@ const Navbar = () => {
 	return (
 		<>
 			<div className="menu_style">
-				<NavLink to="/">Homes</NavLink>
+				<NavLink to="/">Home</NavLink>
 				<NavLink to="/about">About Us</NavLink>
 				<NavLink to="/contact">Contact</NavLink>
 				<NavLink to="/services">Services</NavLink>

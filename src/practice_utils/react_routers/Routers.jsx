@@ -32,7 +32,7 @@ const Routers = () => {
 					<Route index element={<Home />} />
 					<Route path="about" element={<About name="About" />} />
 					<Route path="contact" element={<Contact />} />
-					<Route path="/contact/:name" element={<Name />} />
+					<Route path="/contact/name" element={<Name />} />
 					{/* 404 error page */}
 					<Route path="*" element={<Error />} />
 				</Route>
