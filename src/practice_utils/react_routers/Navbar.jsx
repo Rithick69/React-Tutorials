@@ -24,7 +24,7 @@ const Navbar = () => {
 					width: "400px",
 				}}
 			>
-				<NavLink to="/">Homes</NavLink>
+				<NavLink to="/">Home</NavLink>
 				<NavLink to="/about">About Us</NavLink>
 				<NavLink to="/contact">Contact</NavLink>
 			</div>
