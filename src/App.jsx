@@ -1,7 +1,6 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import Routers from "./practice_utils/useparam_hooks/Routers";
-
+import Routers from "./components/live_search/Routers";
 const App = () => {
 	return <Routers />;
 };
