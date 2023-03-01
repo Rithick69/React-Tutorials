@@ -21,9 +21,6 @@ import Search from "./Search";
 // Routes and Route acts as a switch case element whereby the page renders whichever url is selected.
 
 const Routers = () => {
-	const Name = () => {
-		return <h1 style={{ marginTop: "20px" }}>Hello, I am Rithick</h1>;
-	};
 	return (
 		<>
 			{/* Nested Routing */}
