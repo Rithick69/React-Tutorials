@@ -34,11 +34,13 @@ const Routers = () => {
 					<Route index element={<Home />} />
 					<Route path="about" element={<About name="About" />} />
 					<Route path="services" element={<Services />} />
-					<Route path="contact" element={<Contact />} />
-					<Route path="user" element={<User />} />
-					<Route path="/contact/name" element={<Name />} />
-					{/* inorder to pass parameters through url we need to write the path like this. */}
-					<Route path="user/:fname/:lname" element={<User />} />
+					<Route path="contact" element={<Contact />}>
+						<Route path="/contact/name" element={<Name />} />
+					</Route>
+					<Route path="user" element={<User />}>
+						{/* inorder to pass parameters through url we need to write the path like this. */}
+						<Route path=":fname/:lname" element={<User />} />
+					</Route>
 					{/* 404 error page */}
 					<Route path="*" element={<Error />} />
 				</Route>
