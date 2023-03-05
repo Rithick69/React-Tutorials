@@ -8,6 +8,8 @@
 # Image
 /src/components/note/Image
 
+/src/components/responsive_animated_website/Images
+
 # testing
 /coverage
 
