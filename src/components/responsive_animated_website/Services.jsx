@@ -15,7 +15,7 @@ const Services = () => {
 							{Sdata.map((curr, index) => {
 								return (
 									<>
-										<Card imgsrc={curr.imgsrc} title={curr.title} />
+										<Card key={index} imgsrc={curr.imgsrc} title={curr.title} />
 									</>
 								);
 							})}
