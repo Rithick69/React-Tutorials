@@ -7,6 +7,7 @@ import Contact from "./Contact";
 import Services from "./Services";
 // import Error from "./Error";
 import "./index.css";
+import Footer from "./Footer";
 
 const Routers = () => {
 	return (
@@ -23,6 +24,7 @@ const Routers = () => {
 					{/* <Route path="*" element={<Error />} /> */}
 				</Route>
 			</Routes>
+			<Footer />
 		</>
 	);
 };
