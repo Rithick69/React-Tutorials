@@ -7,6 +7,7 @@ const Home = () => {
 		<>
 			<Common
 				head_text="Grow your business"
+				brand="React"
 				button_text="Get Started"
 				visit="/services"
 				img={web}

@@ -8,7 +8,7 @@ const About = () => {
 			<Common
 				head_text="Welcome to About Page"
 				button_text="Contact Here"
-				visit="contact"
+				visit="/contact"
 				img={web}
 			/>
 		</>
