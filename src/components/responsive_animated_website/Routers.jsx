@@ -6,7 +6,7 @@ import About from "./About";
 import Contact from "./Contact";
 import Services from "./Services";
 // import Error from "./Error";
-import "./index.css";
+import "./index.scss";
 import Footer from "./Footer";
 
 const Routers = () => {
