@@ -1,8 +1,8 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
-import Routers from "./components/responsive_animated_website/Routers";
+import Weather from "./components/weather app/Weather";
 const App = () => {
-	return <Routers />;
+	return <Weather />;
 };
 export default App;
