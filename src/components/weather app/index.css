@@ -99,7 +99,7 @@ html {
 	margin-top: -5.5rem;
 	text-align: center;
 	font-weight: 500;
-	font-size: 5rem;
+	font-size: 4rem;
 	text-transform: capitalize;
 }
 
@@ -149,7 +149,7 @@ html {
 }
 
 #weathercon .MuiSvgIcon-root {
-	font-size: 6rem;
+	font-size: 6rem !important;
 	animation: fas-anime 3s linear infinite alternate;
 }
 
@@ -219,4 +219,5 @@ body > span {
 
 .MuiSvgIcon-root {
 	color: white !important;
+	font-size: 3rem !important;
 }
