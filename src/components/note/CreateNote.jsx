@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Button } from "@material-ui/core";
-import { Add } from "@material-ui/icons";
+import { Button } from "@mui/core";
+import { Add } from "@mui/icons-material";
 
 const CreateNote = (props) => {
 	// To expand and contract the input field.
