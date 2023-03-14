@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import {
 	Cloud,
-	AcUnitIcon,
-	ThunderstormIcon,
-	UmbrellaIcon,
-	FilterDramaIcon,
-	GrainIcon,
-} from "@material-ui/icons";
+	Thunderstorm,
+	Grain,
+	AcUnit,
+	Umbrella,
+	FilterDrama,
+} from "@mui/icons-material";
 import "./index.css";
 
 const Weather = () => {
@@ -21,12 +21,40 @@ const Weather = () => {
 		const fetchApi = async () => {
 			const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=2390465be2a3f69b156f1fb4ee1c01e1`;
 			const res = await fetch(url);
+
+			if (!res.ok) {
+				const message = `An error has occured: ${res.status}`;
+				setData(null);
+				throw new Error(message);
+			}
 			const resJson = await res.json();
 			setData(resJson);
-			console.log(resJson.weather[0].main);
+			//console.log(resJson.weather[0].main);
 		};
-		fetchApi();
+		fetchApi().catch((e) => {
+			console.log("Error");
+		});
 	}, [search]);
+
+	const Ticon = () => {
+		switch (data.weather[0].main) {
+			case "Clear":
+				return <FilterDrama />;
+			case "Rain":
+				return <Umbrella />;
+			case "Thunderstorm":
+				return <Thunderstorm />;
+			case "Snow":
+				return <AcUnit />;
+			case "Mist":
+				return <Grain />;
+			case "Haze":
+				return <Grain />;
+			default:
+				return <Cloud />;
+		}
+	};
+
 	return (
 		<>
 			<div className="box">
@@ -44,17 +72,7 @@ const Weather = () => {
 					<>
 						<div className="info">
 							<h2 className="location">
-								{/* {{
-									if(data.weather[0].main == 'Clear'){<FilterDramaIcon />}
-								else if(data.weather[0].main == 'Rain'){<UmbrellaIcon />}
-								else if(data.weather[0].main == 'thunderstorm')
-								{<ThunderstormIcon />}
-								else if(data.weather[0].main == 'Snow'){<AcUnitIcon />}
-								else if(data.weather[0].main == 'Mist'){<GrainIcon />}
-								else {<Cloud />}}} */}
-								{/* {data.desc = "normal"} */}
-								<Cloud />
-								{search}
+								<Ticon /> {search}
 							</h2>
 							<h1 className="temp">{data.main.temp}°Cel</h1>
 							<h3 className="tempmin_max">
