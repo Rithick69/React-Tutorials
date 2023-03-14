@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import TodoList from "./ToDoList";
 import Clock from "react-digital-clock";
-import { Add } from "@material-ui/icons";
-import { Tooltip, Button } from "@material-ui/core";
+import { Add } from "@mui/icons-material";
+import { Tooltip, Button } from "@mui/core";
 
 // TODO LIST using ReactJS
 

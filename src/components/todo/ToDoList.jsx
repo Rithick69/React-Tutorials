@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Delete } from "@material-ui/icons";
-import { Tooltip } from "@material-ui/core";
+import { Delete } from "@mui/icons-material";
+import { Tooltip } from "@mui/core";
 
 const TodoList = (props) => {
 	const [line, setLine] = useState(false);
