@@ -70,18 +70,26 @@ const Weather = () => {
 					<p className="errorMsg">No Data Found</p>
 				) : (
 					<>
+						<div className="wave -one"></div>
+						<div className="wave -two"></div>
+						<div className="wave -three"></div>
+
+						<div id="weathercon">
+							<i className="fas">
+								<Ticon />
+							</i>
+						</div>
+
 						<div className="info">
 							<h2 className="location">
-								<Ticon /> {search}
+								{data.weather[0].main}
+								{search}, {data.sys.country}
 							</h2>
 							<h1 className="temp">{data.main.temp}°Cel</h1>
 							<h3 className="tempmin_max">
 								Min: {data.main.temp_min}°Cel | Max: {data.main.temp_max}°Cel
 							</h3>
 						</div>
-						<div className="wave -one"></div>
-						<div className="wave -two"></div>
-						<div className="wave -three"></div>
 					</>
 				)}
 			</div>
