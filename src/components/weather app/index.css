@@ -15,7 +15,6 @@ body {
 	flex-wrap: wrap;
 	height: 100vh;
 	width: 100vw;
-	font-family: "Jost", sans-serif;
 }
 
 html,
@@ -41,26 +40,26 @@ body {
 .wave {
 	opacity: 0.3;
 	position: absolute;
-	top: 120%;
+	top: 118%;
 	left: 50%;
 	background: white;
 	width: 50rem;
 	height: 50rem;
 	margin-left: -25rem;
-	margin-top: -20rem;
+	margin-top: -25rem;
 	transform-origin: 50% 48%;
 	border-radius: 43%;
 	animation: drift 3000ms infinite linear;
 	z-index: 1 !important;
 }
 
-.wave .-three {
+.-three {
 	animation: drift 5000ms infinite linear;
 	z-index: 2 !important;
 	opacity: 0.2;
 }
 
-.wave .-two {
+.-two {
 	animation: drift 7000ms infinite linear;
 	opacity: 0.1;
 	z-index: 3 !important;
@@ -140,7 +139,7 @@ body {
 }
 
 #weathercon {
-	height: 55%;
+	height: 40%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
