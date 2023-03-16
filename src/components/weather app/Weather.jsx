@@ -6,6 +6,7 @@ import {
 	AcUnit,
 	Umbrella,
 	FilterDrama,
+	FmdGood,
 } from "@mui/icons-material";
 import "./index.css";
 
@@ -55,6 +56,17 @@ const Weather = () => {
 		}
 	};
 
+	const currDate = new Date();
+	const weekday = [
+		"Sunday",
+		"Monday",
+		"Tuesday",
+		"Wednesday",
+		"Thursday",
+		"Friday",
+		"Saturday",
+	];
+
 	return (
 		<>
 			<div className="box">
@@ -75,16 +87,18 @@ const Weather = () => {
 						<div className="wave -three"></div>
 
 						<div id="weathercon">
-							<i className="fas">
-								<Ticon />
-							</i>
+							<i className="fas fa-sun"></i>
 						</div>
 
 						<div className="info">
 							<h2 className="location">
-								{data.weather[0].main}
+								<FmdGood />
 								{search}, {data.sys.country}
 							</h2>
+							<p id="date">
+								{weekday[currDate.getDay()]}, {currDate.getDate()}/
+								{currDate.getMonth()}/{currDate.getFullYear()}
+							</p>
 							<h1 className="temp">{data.main.temp}°Cel</h1>
 							<h3 className="tempmin_max">
 								Min: {data.main.temp_min}°Cel | Max: {data.main.temp_max}°Cel
