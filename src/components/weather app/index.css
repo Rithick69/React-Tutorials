@@ -97,7 +97,7 @@ body {
 	text-align: center;
 	font-weight: 400;
 	font-size: 3rem;
-	text-transform: capitalize;
+	text-transform: uppercase;
 }
 
 .MuiSvgIcon-root {
@@ -139,7 +139,7 @@ body {
 }
 
 #weathercon {
-	height: 40%;
+	height: 30%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -161,9 +161,9 @@ body {
 	}
 }
 
-@media (max-height: 600px) {
+@media (max-width: 600px) {
 	.box {
-		width: 90vw;
+		width: 70vw;
 		height: 80vh;
 	}
 	.wave {
@@ -177,9 +177,9 @@ body {
 	}
 }
 
-@media (max-height: 500px) {
+@media (max-width: 500px) {
 	.box {
-		height: 80vh;
+		height: 55vh;
 	}
 	.wave {
 		top: 115%;
@@ -216,6 +216,6 @@ body > span {
 }
 
 .MuiSvgIcon-root {
-	color: white !important;
+	color: red !important;
 	font-size: 3rem !important;
 }
