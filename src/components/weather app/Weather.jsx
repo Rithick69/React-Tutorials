@@ -1,13 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-	Cloud,
-	Thunderstorm,
-	Grain,
-	AcUnit,
-	Umbrella,
-	FilterDrama,
-	FmdGood,
-} from "@mui/icons-material";
+import { FmdGood } from "@mui/icons-material";
 import "./index.css";
 
 const Weather = () => {
@@ -40,31 +32,63 @@ const Weather = () => {
 	const Ticon = () => {
 		switch (data.weather[0].main) {
 			case "Clear":
-				return <FilterDrama />;
+				return (
+					<i className="fas fa-solid fa-sun" style={{ color: "yellow" }}></i>
+				);
+			case "Drizzle":
+				return (
+					<i
+						className="fas fa-solid fa-cloud-drizzle"
+						style={{ color: "white" }}
+					></i>
+				);
 			case "Rain":
-				return <Umbrella />;
+				return (
+					<i
+						className="fas fa-solid fa-cloud-showers-heavy"
+						style={{ color: "white" }}
+					></i>
+				);
 			case "Thunderstorm":
-				return <Thunderstorm />;
+				return (
+					<i
+						className="fas fa-solid fa-cloud-bolt"
+						style={{ color: "white" }}
+					></i>
+				);
 			case "Snow":
-				return <AcUnit />;
-			case "Mist":
-				return <Grain />;
-			case "Haze":
-				return <Grain />;
+				return (
+					<i
+						className="fas fa-solid fa-snowflake"
+						style={{ color: "white" }}
+					></i>
+				);
+			case "Clouds":
+				return (
+					<i className="fas fa-solid fa-cloud" style={{ color: "white" }}></i>
+				);
 			default:
-				return <Cloud />;
+				return (
+					<i className="fas fa-solid fa-smog" style={{ color: "#979797" }}></i>
+				);
 		}
 	};
 
 	const currDate = new Date();
-	const weekday = [
-		"Sunday",
-		"Monday",
-		"Tuesday",
-		"Wednesday",
-		"Thursday",
-		"Friday",
-		"Saturday",
+	const weekday = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+	const month = [
+		"Jan",
+		"Feb",
+		"Mar",
+		"Apr",
+		"May",
+		"Jun",
+		"Jul",
+		"Aug",
+		"Sept",
+		"Oct",
+		"Nov",
+		"Dec",
 	];
 
 	return (
@@ -87,8 +111,17 @@ const Weather = () => {
 						<div className="wave -three"></div>
 
 						<div id="weathercon">
-							<i className="fas fa-sun"></i>
+							<Ticon />
 						</div>
+						<p
+							style={{
+								textAlign: "center",
+								fontSize: "2rem",
+								marginTop: "-1rem",
+							}}
+						>
+							{data.weather[0].main}
+						</p>
 
 						<div className="info">
 							<h2 className="location">
@@ -96,8 +129,8 @@ const Weather = () => {
 								{search}, {data.sys.country}
 							</h2>
 							<p id="date">
-								{weekday[currDate.getDay()]}, {currDate.getDate()}/
-								{currDate.getMonth()}/{currDate.getFullYear()}
+								{weekday[currDate.getDay()]} | {month[currDate.getMonth()]}{" "}
+								{currDate.getDate()}, {currDate.getFullYear()}
 							</p>
 							<h1 className="temp">{data.main.temp}°Cel</h1>
 							<h3 className="tempmin_max">
