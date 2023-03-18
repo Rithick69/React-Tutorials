@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TodoList from "./ToDoList";
 import Clock from "react-digital-clock";
 import { Add } from "@mui/icons-material";
-import { Tooltip, Button } from "@mui/core";
+import { Tooltip, Button } from "@mui/material";
 
 // TODO LIST using ReactJS
 
@@ -48,15 +48,21 @@ const ToDoCard = () => {
 		<>
 			<div className="main_div">
 				<div className="center_div">
-					<h2
+					{/* <h2
 						style={{
 							marginTop: "20px",
 						}}
 					>
 						<Clock />
 					</h2>
-					<br />
-					<h1> ToDo List</h1>
+					<br /> */}
+					<h1
+						style={{
+							marginTop: "20px",
+						}}
+					>
+						ToDo List
+					</h1>
 					<br />
 					<input
 						type="text"

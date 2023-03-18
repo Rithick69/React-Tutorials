@@ -1,5 +1,5 @@
 import React from "react";
-import "./todostyles.css";
+import "./index.css";
 import TodoCard from "./ToDoCard";
 
 // Digital clock using npm package
