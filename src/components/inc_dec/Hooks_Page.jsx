@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
 import { Add, Delete } from "@mui/icons-material";
-import { Button, Tooltip } from "@mui/core";
+import { Button, Tooltip } from "@mui/material";
 
 const Hooks_Page = () => {
 	const [CurrData, setData] = useState(0);

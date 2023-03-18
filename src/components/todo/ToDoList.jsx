@@ -1,19 +1,27 @@
 import React, { useState } from "react";
 import { Delete } from "@mui/icons-material";
-import { Tooltip } from "@mui/core";
+import { Tooltip } from "@mui/material";
 
 const TodoList = (props) => {
 	const [line, setLine] = useState(false);
 
-	const cutIt = () => {
-		setLine(true);
-	};
+	// Line through style
+	// const cutIt = () => {
+	// 	setLine(true);
+	// };
 	return (
 		<>
 			<div className="todo_style">
 				{/* We need to return the id of the element we want to delete */}
 				<Tooltip title="Delete">
-					<Delete className="fa fa-times" onClick={cutIt} />
+					<Delete
+						className="fa fa-times"
+						onClick={() => {
+							props.onSelect(props.id);
+						}}
+					/>
+					{/* For Cut it
+					oncClick={cutIt} */}
 					{/* For Deleting
 					onClick={() => {
 							props.onSelect(props.id);
