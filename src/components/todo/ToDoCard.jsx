@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TodoList from "./ToDoList";
-import Clock from "react-digital-clock";
-import { Add } from "@mui/icons-material";
+// import Clock from "react-digital-clock";
+import { Add, DeleteForever } from "@mui/icons-material";
 import { Tooltip, Button } from "@mui/material";
 
 // TODO LIST using ReactJS
@@ -31,6 +31,10 @@ const ToDoCard = () => {
 		setInputList("");
 	};
 
+	const removeAll = () => {
+		setItems([]);
+	};
+
 	const deleteItem = (id) => {
 		// console.log("deleted");
 		// Delete elements from the array using Filter.
@@ -43,6 +47,10 @@ const ToDoCard = () => {
 			});
 		});
 	};
+
+	useEffect(() => {
+		localStorage.setItem("lists", JSON.stringify(Items));
+	}, [Items]);
 
 	return (
 		<>
@@ -63,6 +71,11 @@ const ToDoCard = () => {
 					>
 						ToDo List
 					</h1>
+					<Tooltip title="Remove All Items">
+						<Button className="todo_button" onClick={removeAll}>
+							<DeleteForever />
+						</Button>
+					</Tooltip>
 					<br />
 					<input
 						type="text"

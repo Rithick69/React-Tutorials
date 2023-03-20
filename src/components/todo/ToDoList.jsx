@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Delete } from "@mui/icons-material";
 import { Tooltip } from "@mui/material";
 
 const TodoList = (props) => {
-	const [line, setLine] = useState(false);
+	// const [line, setLine] = useState(false);
 
 	// Line through style
 	// const cutIt = () => {
@@ -30,11 +30,8 @@ const TodoList = (props) => {
 				</Tooltip>
 				{/* Props are immutable which means they can't be changed */}
 				{/* We want delete event to work on App.jsx */}
-				<li
-					style={{ textDecoration: line ? "line-through" : "none" }}
-					key={props.key}
-					id={props.id}
-				>
+				{/* style={{ textDecoration: line ? "line-through" : "none" }} */}
+				<li key={props.key} id={props.id}>
 					{props.text}
 				</li>
 			</div>
