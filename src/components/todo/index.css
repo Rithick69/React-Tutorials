@@ -30,6 +30,13 @@
 	box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.5);
 	border-radius: 15px;
 }
+.center_div1 {
+	height: 48vh;
+	overflow: auto;
+}
+.center_div2 {
+	height: 15vh;
+}
 
 span {
 	color: #8566aa;
@@ -65,6 +72,22 @@ input {
 	background-color: #8566aa !important;
 	color: white !important;
 	margin-left: 10px !important;
+	box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.footers {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.todo_button2 {
+	min-height: 40px;
+	max-width: 1000px;
+	min-width: 80px !important;
+	border-radius: 5px !important;
+	background-color: #8566aa !important;
+	color: white !important;
 	box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
