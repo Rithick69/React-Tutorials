@@ -21,12 +21,16 @@ const ToDoCard = () => {
 
 	const listOfItems = () => {
 		if (inputList !== "") {
+			const allInputData = {
+				id: new Date().getTime().toString(),
+				name: inputList,
+			};
 			setItems((prevItems) => {
 				// Adding the  prev value of the Items array and if array is empty
 				// then push the new value from inputList to the array.
 				// UseState return the a new array which becomes the curr data of Items array.
 
-				return [...prevItems, inputList];
+				return [...prevItems, allInputData];
 			});
 			// Clearing the input field after add the item to the array.
 			setInputList("");
@@ -90,13 +94,8 @@ const ToDoCard = () => {
 							{/* <li>{todoItem}</li> */}
 							{/* Using map method to display the items of the 'Items' array */}
 							{/* We send deleteItem event as props to ToDoList so that we can call the event here */}
-							{Items.map((val, index) => (
-								<TodoList
-									key={index}
-									id={index}
-									text={val}
-									onSelect={deleteItem}
-								/>
+							{Items.map((val) => (
+								<TodoList key={val.id} text={val.name} onSelect={deleteItem} />
 							))}
 						</ol>
 					</div>
