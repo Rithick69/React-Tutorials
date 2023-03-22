@@ -11,7 +11,26 @@
 	font-family: "Roboto", sans-serif;
 }
 /* ToDo List */
+::-webkit-scrollbar {
+	width: 5px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey;
+	border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888;
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
 .main_div {
 	width: 100%;
 	height: 100vh;
@@ -31,10 +50,12 @@
 	border-radius: 15px;
 }
 .center_div1 {
-	height: 48vh;
+	width: 90%;
+	height: 45vh;
 	overflow: auto;
 }
 .center_div2 {
+	margin-top: 10px;
 	height: 15vh;
 }
 
@@ -62,6 +83,7 @@ input {
 	width: 60%;
 	border-bottom: 2px solid #8566aa;
 	outline: none;
+	margin-bottom: 30px;
 }
 
 .todo_button {
@@ -96,10 +118,6 @@ input {
 }
 .todo_button:hover {
 	background-color: #20bf6b !important;
-}
-
-ol {
-	margin-top: 30px;
 }
 
 ol li {
@@ -148,7 +166,11 @@ ol li {
 		width: 55%;
 	}
 	.center_div {
-		width: 55%;
+		width: 65%;
+		height: 60vh;
+	}
+	.center_div1 {
+		height: 35vh;
 	}
 	.todo_style .fa-times {
 		margin: 0 15px 0 15px;
@@ -162,5 +184,15 @@ ol li {
 		width: 40px;
 		color: #fff;
 		font-size: 30px;
+	}
+}
+
+@media (max-width: 400px) {
+	.center_div {
+		width: 70%;
+		height: 72vh;
+	}
+	.center_div1 {
+		height: 40vh;
 	}
 }
