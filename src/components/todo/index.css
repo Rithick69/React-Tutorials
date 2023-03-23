@@ -139,6 +139,14 @@ ol li {
 	align-items: center;
 }
 
+.list_style {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
 .todo_style .fa-times {
 	width: 25px;
 	height: 25px;
@@ -153,12 +161,25 @@ ol li {
 	box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
+.todo_style .fa-times2 {
+	width: 25px;
+	height: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5px;
+	margin: 0 15px 0 35px;
+	border-radius: 5px;
+	color: green;
+}
+
 .todo_style .fa-times:hover {
 	background-color: crimson;
 }
 
-.todo_style .fa-times .list_style {
-	color: crimson;
+.todo_style .fa-times2:hover {
+	background-color: green;
+	color: white;
 }
 
 @media (max-width: 768px) {
