@@ -1,5 +1,5 @@
 import React from "react";
-import { Delete } from "@mui/icons-material";
+import { Delete, Edit } from "@mui/icons-material";
 import { Tooltip } from "@mui/material";
 
 const TodoList = (props) => {
@@ -17,7 +17,7 @@ const TodoList = (props) => {
 					<Delete
 						className="fa fa-times"
 						onClick={() => {
-							props.onSelect(props.key);
+							props.onSelect(props.id, "delete");
 						}}
 					/>
 					{/* For Cut it
@@ -31,7 +31,19 @@ const TodoList = (props) => {
 				{/* Props are immutable which means they can't be changed */}
 				{/* We want delete event to work on App.jsx */}
 				{/* style={{ textDecoration: line ? "line-through" : "none" }} */}
-				<li key={props.key}>{props.text}</li>
+				<div className="list_style">
+					<li key={props.key} id={props.id}>
+						{props.text}
+					</li>
+					<Tooltip title="Edit">
+						<Edit
+							className="fa fa-times2"
+							onClick={() => {
+								props.onSelect(props.id, "edit");
+							}}
+						/>
+					</Tooltip>
+				</div>
 			</div>
 		</>
 	);
