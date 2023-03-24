@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TodoList from "./ToDoList";
 // import Clock from "react-digital-clock";
-import { Add, DeleteForever } from "@mui/icons-material";
+import { Add, DeleteForever, Edit } from "@mui/icons-material";
 import { Tooltip, Button } from "@mui/material";
 
 // TODO LIST using ReactJS
@@ -24,6 +24,7 @@ const ToDoCard = () => {
 	// Adding []s to the useState makes the curr variable an array.
 	// Initialising Items as an empty array.
 	const [Items, setItems] = useState([]);
+	const [toggleIcon, setToggleIcon] = useState(true);
 
 	const itemEvent = (event) => {
 		const { value } = event.target;
@@ -67,6 +68,10 @@ const ToDoCard = () => {
 			return elem.id === id;
 		});
 		console.log(newEditItem);
+
+		//getLocalItems(newEditItem);
+		setToggleIcon(false);
+		setInputList(newEditItem);
 	};
 
 	const deleteItem = (idx) => {
@@ -112,11 +117,22 @@ const ToDoCard = () => {
 						value={inputList}
 						onChange={itemEvent}
 					/>
-					<Tooltip title="Add Item">
+					{toggleIcon ? (
+						<Tooltip title="Add Item">
+							<Button className="todo_button" onClick={listOfItems}>
+								<Add />
+							</Button>
+						</Tooltip>
+					) : (
+						<Tooltip title="Edit">
+							<Edit className="fa fa-times2" />
+						</Tooltip>
+					)}
+					{/* <Tooltip title="Add Item">
 						<Button className="todo_button" onClick={listOfItems}>
 							<Add />
 						</Button>
-					</Tooltip>
+					</Tooltip> */}
 					<div className="center_div1">
 						<ol>
 							{/* <li>{todoItem}</li> */}
