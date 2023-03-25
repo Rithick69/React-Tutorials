@@ -23,13 +23,13 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	background: #888;
+	background: #8566aa;
 	border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-	background: #555;
+	background: #8566aa;
 }
 .main_div {
 	width: 100%;
