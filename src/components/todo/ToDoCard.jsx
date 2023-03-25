@@ -8,16 +8,16 @@ import { Tooltip, Button } from "@mui/material";
 
 // to get the data from Local Storage
 
-const getLocalItems = () => {
-	let list = localStorage.getItem("lists");
-	console.log(list);
+// const getLocalItems = () => {
+// 	let list = localStorage.getItem("lists");
+// 	console.log(list);
 
-	if (list) {
-		return JSON.parse(localStorage.getItem("lists"));
-	} else {
-		return [];
-	}
-};
+// 	if (list) {
+// 		return JSON.parse(localStorage.getItem("lists"));
+// 	} else {
+// 		return [];
+// 	}
+// };
 
 const ToDoCard = () => {
 	const [inputList, setInputList] = useState("");
@@ -25,6 +25,7 @@ const ToDoCard = () => {
 	// Initialising Items as an empty array.
 	const [Items, setItems] = useState([]);
 	const [toggleIcon, setToggleIcon] = useState(true);
+	const [editItemId, setEditItemId] = useState(null);
 
 	const itemEvent = (event) => {
 		const { value } = event.target;
@@ -34,7 +35,21 @@ const ToDoCard = () => {
 	// Storing every new item in an empty as well as displaying it
 
 	const listOfItems = () => {
-		if (inputList !== "") {
+		if (!inputList) {
+			alert("Please enter data");
+		} else if (!toggleIcon && inputList) {
+			setItems(
+				Items.map((elem) => {
+					if (elem.id === editItemId) {
+						return { ...elem, name: inputList };
+					}
+					return elem;
+				})
+			);
+			setToggleIcon(true);
+			setInputList("");
+			setEditItemId(null);
+		} else {
 			const allInputData = {
 				id: new Date().getTime().toString(),
 				name: inputList,
@@ -48,6 +63,7 @@ const ToDoCard = () => {
 			});
 			// Clearing the input field after add the item to the array.
 			setInputList("");
+			setToggleIcon(true);
 		}
 	};
 
@@ -71,7 +87,8 @@ const ToDoCard = () => {
 
 		//getLocalItems(newEditItem);
 		setToggleIcon(false);
-		setInputList(newEditItem);
+		setInputList(newEditItem.name);
+		setEditItemId(id);
 	};
 
 	const deleteItem = (idx) => {
@@ -125,7 +142,9 @@ const ToDoCard = () => {
 						</Tooltip>
 					) : (
 						<Tooltip title="Edit">
-							<Edit className="fa fa-times2" />
+							<Button className="todo_button" onClick={listOfItems}>
+								<Edit className="fa fa-times2" />
+							</Button>
 						</Tooltip>
 					)}
 					{/* <Tooltip title="Add Item">
