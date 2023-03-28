@@ -4,6 +4,12 @@ import Menu from "./Menu.jsx";
 
 const Gallery = () => {
 	const [items, setItems] = useState(Menu);
+	const filterItem = (cat) => {
+		const updatedItem = Menu.filter((curr) => {
+			return curr.category === cat;
+		});
+		setItems(updatedItem);
+	};
 	return (
 		<>
 			<h1 className="main-heading mt-5 text-center">
@@ -12,10 +18,33 @@ const Gallery = () => {
 			<hr />
 			<div className="menu-tabs container">
 				<div className="menu-tab d-flex justify-content-around">
-					<button className="btn btn-warning">Breakfast</button>
-					<button className="btn btn-warning">Lunch</button>
-					<button className="btn btn-warning">Evening</button>
-					<button className="btn btn-warning">Dinner</button>
+					<button
+						className="btn btn-warning"
+						onClick={() => filterItem("breakfast")}
+					>
+						Breakfast
+					</button>
+					<button
+						className="btn btn-warning"
+						onClick={() => filterItem("lunch")}
+					>
+						Lunch
+					</button>
+					<button
+						className="btn btn-warning"
+						onClick={() => filterItem("evening")}
+					>
+						Evening
+					</button>
+					<button
+						className="btn btn-warning"
+						onClick={() => filterItem("dinner")}
+					>
+						Dinner
+					</button>
+					<button className="btn btn-warning" onClick={() => setItems(Menu)}>
+						All
+					</button>
 				</div>
 			</div>
 			<div className="menu-items container-fluid mt-5">
