@@ -12,12 +12,12 @@ const MenuItems = (props) => {
 								return (
 									<>
 										<div
-											className="item1 col-12 col-md-6 col-lg-6 col-xl-4 my-5"
+											className="item col-12 col-md-6 col-lg-4 col-xl-4 my-5"
 											key={id}
 										>
 											<div className="row item-inside">
 												{/* for images */}
-												<div className="col-12 col-md-12 col-lg-4 img-div">
+												<div className="col-12 col-md-12 col-lg-6 img-div">
 													<img src="#" alt={name} className="img-fluid" />
 												</div>
 												{/* Menu Description */}
