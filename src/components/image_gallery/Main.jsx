@@ -1,9 +1,10 @@
 import React from "react";
+import Gallery from "./Gallery";
 
 const Main = () => {
 	return (
 		<>
-			<h1>Hello</h1>
+			<Gallery />
 		</>
 	);
 };
