@@ -3,12 +3,12 @@ import React from "react";
 const Tabs = ({ filterItem, catItems }) => {
 	return (
 		<>
-			<div className="menu-tabs container">
-				<div className="menu-tab d-flex justify-content-around">
+			<nav className="navbar">
+				<div className="btn-group">
 					{catItems.map((elem, index) => {
 						return (
 							<button
-								className="btn btn-warning"
+								className="btn-group__item"
 								key={index}
 								onClick={() => filterItem(elem)}
 							>
@@ -17,7 +17,7 @@ const Tabs = ({ filterItem, catItems }) => {
 						);
 					})}
 				</div>
-			</div>
+			</nav>
 		</>
 	);
 };
