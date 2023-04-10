@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const WeatherCard = ({ weatherData }) => {
+	const [weatherIcons, setWeatherIcons] = useState("");
 	const {
 		temp,
 		humidity,
@@ -11,50 +12,34 @@ const WeatherCard = ({ weatherData }) => {
 		sunset,
 		speed,
 	} = weatherData;
-	const Ticon = () => {
-		switch (weathermood) {
-			case "Clear":
-				return (
-					<i className="fas fa-solid fa-sun" style={{ color: "yellow" }}></i>
-				);
-			case "Drizzle":
-				return (
-					<i
-						className="fas fa-solid fa-cloud-drizzle"
-						style={{ color: "white" }}
-					></i>
-				);
-			case "Rain":
-				return (
-					<i
-						className="fas fa-solid fa-cloud-showers-heavy"
-						style={{ color: "white" }}
-					></i>
-				);
-			case "Thunderstorm":
-				return (
-					<i
-						className="fas fa-solid fa-cloud-bolt"
-						style={{ color: "white" }}
-					></i>
-				);
-			case "Snow":
-				return (
-					<i
-						className="fas fa-solid fa-snowflake"
-						style={{ color: "white" }}
-					></i>
-				);
-			case "Clouds":
-				return (
-					<i className="fas fa-solid fa-cloud" style={{ color: "white" }}></i>
-				);
-			default:
-				return (
-					<i className="fas fa-solid fa-smog" style={{ color: "#979797" }}></i>
-				);
+
+	useEffect(() => {
+		if (weathermood) {
+			switch (weathermood) {
+				case "Clear":
+					setWeatherIcons("wi-day-sunny");
+					break;
+				case "Drizzle":
+					setWeatherIcons("wi-showers");
+					break;
+				case "Rain":
+					setWeatherIcons("wi-rain");
+					break;
+				case "Thunderstorm":
+					setWeatherIcons("wi-thunderstorm");
+					break;
+				case "Snow":
+					setWeatherIcons("wi-snowflake-cold");
+					break;
+				case "Clouds":
+					setWeatherIcons("wi-cloudy");
+					break;
+				default:
+					setWeatherIcons("wi-dust");
+					break;
+			}
 		}
-	};
+	}, [weathermood]);
 
 	const currDate = new Date();
 	const weekday = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
@@ -72,15 +57,19 @@ const WeatherCard = ({ weatherData }) => {
 		"Nov",
 		"Dec",
 	];
+
+	let sec = sunset;
+	let date = new Date(sec * 1000);
+	let timeStr = `${date.getHours()}:${date.getMinutes()}`;
 	return (
 		<>
 			<article className="widget">
 				<div className="weatherIcon">
-					<i className="wi wi-day-sunny"></i>
+					<i className={`wi ${weatherIcons}`}></i>
 				</div>
 				<div className="weatherInfo">
 					<div className="temperature">
-						<span>{temp}</span>
+						<span>{temp}°Cel</span>
 					</div>
 					<div className="description">
 						<div className="weatherConditon">{weathermood}</div>
@@ -97,9 +86,9 @@ const WeatherCard = ({ weatherData }) => {
 								<i className={"wi wi-sunset"}></i>
 							</p>
 							<p className="extra-info-leftside">
-								19:19 PM
+								{timeStr}
 								<br />
-								{sunset}
+								Sunset
 							</p>
 						</div>
 						<div className="two-sided-section">
@@ -107,9 +96,9 @@ const WeatherCard = ({ weatherData }) => {
 								<i className={"wi wi-humidity"}></i>
 							</p>
 							<p className="extra-info-leftside">
-								19:19 PM
-								<br />
 								{humidity}
+								<br />
+								Humidity
 							</p>
 						</div>
 						<div className="weather-extra-info">
@@ -118,9 +107,9 @@ const WeatherCard = ({ weatherData }) => {
 									<i className={"wi wi-rain"}></i>
 								</p>
 								<p className="extra-info-leftside">
-									19:19 PM
-									<br />
 									{pressure}
+									<br />
+									Pressure
 								</p>
 							</div>
 							<div className="two-sided-section">
@@ -128,9 +117,9 @@ const WeatherCard = ({ weatherData }) => {
 									<i className={"wi wi-strong-wind"}></i>
 								</p>
 								<p className="extra-info-leftside">
-									19:19 PM
-									<br />
 									{speed}
+									<br />
+									Speed
 								</p>
 							</div>
 						</div>
