@@ -11,16 +11,20 @@ const Temp = () => {
 		setSearch(value);
 	};
 
+	useEffect(() => {
+		SearchEvent();
+	}, [search]);
+
 	const SearchEvent = async () => {
 		try {
 			const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=2390465be2a3f69b156f1fb4ee1c01e1`;
 			const res = await fetch(url);
 
-			if (!res.ok) {
-				const message = `An error has occured: ${res.status}`;
-				setData(null);
-				throw new Error(message);
-			}
+			// if (!res.ok) {
+			// 	const message = `An error has occured: ${res.status}`;
+			// 	setData(null);
+			// 	throw new Error(message);
+			// }
 			const resJson = await res.json();
 			const { temp, humidity, pressure } = resJson.main;
 			const { main: weathermood } = resJson.weather[0];
@@ -39,13 +43,12 @@ const Temp = () => {
 				sunset,
 			};
 			setData(weatherData);
+			// console.log(data);
 		} catch (error) {
+			setData(null);
 			console.log(error);
 		}
 	};
-	useEffect(() => {
-		SearchEvent();
-	}, [search]);
 
 	return (
 		<>

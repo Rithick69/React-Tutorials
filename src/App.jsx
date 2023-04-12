@@ -1,8 +1,9 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
-import Main from "./components/image_gallery/Main";
+import Temp from "./components/weather app/Temp";
+
 const App = () => {
-	return <Main />;
+	return <Temp />;
 };
 export default App;

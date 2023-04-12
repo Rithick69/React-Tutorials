@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const WeatherCard = ({ weatherData }) => {
 	const [weatherIcons, setWeatherIcons] = useState("");
+	console.log(weatherData);
 	const {
 		temp,
 		humidity,
@@ -12,6 +13,7 @@ const WeatherCard = ({ weatherData }) => {
 		sunset,
 		speed,
 	} = weatherData;
+	console.log(weatherData.temp);
 
 	useEffect(() => {
 		if (weathermood) {
@@ -41,22 +43,22 @@ const WeatherCard = ({ weatherData }) => {
 		}
 	}, [weathermood]);
 
-	const currDate = new Date();
-	const weekday = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
-	const month = [
-		"Jan",
-		"Feb",
-		"Mar",
-		"Apr",
-		"May",
-		"Jun",
-		"Jul",
-		"Aug",
-		"Sept",
-		"Oct",
-		"Nov",
-		"Dec",
-	];
+	// const currDate = new Date();
+	// const weekday = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+	// const month = [
+	// 	"Jan",
+	// 	"Feb",
+	// 	"Mar",
+	// 	"Apr",
+	// 	"May",
+	// 	"Jun",
+	// 	"Jul",
+	// 	"Aug",
+	// 	"Sept",
+	// 	"Oct",
+	// 	"Nov",
+	// 	"Dec",
+	// ];
 
 	let sec = sunset;
 	let date = new Date(sec * 1000);
@@ -101,27 +103,27 @@ const WeatherCard = ({ weatherData }) => {
 								Humidity
 							</p>
 						</div>
-						<div className="weather-extra-info">
-							<div className="two-sided-section">
-								<p>
-									<i className={"wi wi-rain"}></i>
-								</p>
-								<p className="extra-info-leftside">
-									{pressure}
-									<br />
-									Pressure
-								</p>
-							</div>
-							<div className="two-sided-section">
-								<p>
-									<i className={"wi wi-strong-wind"}></i>
-								</p>
-								<p className="extra-info-leftside">
-									{speed}
-									<br />
-									Speed
-								</p>
-							</div>
+					</div>
+					<div className="weather-extra-info">
+						<div className="two-sided-section">
+							<p>
+								<i className={"wi wi-rain"}></i>
+							</p>
+							<p className="extra-info-leftside">
+								{pressure}
+								<br />
+								Pressure
+							</p>
+						</div>
+						<div className="two-sided-section">
+							<p>
+								<i className={"wi wi-strong-wind"}></i>
+							</p>
+							<p className="extra-info-leftside">
+								{speed}
+								<br />
+								Speed
+							</p>
 						</div>
 					</div>
 				</div>
