@@ -3,29 +3,20 @@ import "./style.css";
 import WeatherCard from "./WeatherCard";
 
 const Temp = () => {
-	const [data, setData] = useState(null);
-	const [search, setSearch] = useState("Kolkata");
+	const [search, setSearch] = useState("kolkata");
+	const [data, setData] = useState({});
 
 	const InputEvent = (event) => {
 		const { value } = event.target;
 		setSearch(value);
 	};
 
-	useEffect(() => {
-		SearchEvent();
-	}, [search]);
-
 	const SearchEvent = async () => {
 		try {
-			const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=2390465be2a3f69b156f1fb4ee1c01e1`;
-			const res = await fetch(url);
+			let url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=2390465be2a3f69b156f1fb4ee1c01e1`;
+			let res = await fetch(url);
+			let resJson = await res.json();
 
-			// if (!res.ok) {
-			// 	const message = `An error has occured: ${res.status}`;
-			// 	setData(null);
-			// 	throw new Error(message);
-			// }
-			const resJson = await res.json();
 			const { temp, humidity, pressure } = resJson.main;
 			const { main: weathermood } = resJson.weather[0];
 			const { name } = resJson;
@@ -43,12 +34,16 @@ const Temp = () => {
 				sunset,
 			};
 			setData(weatherData);
-			// console.log(data);
+			console.log(data);
 		} catch (error) {
-			setData(null);
+			setData({});
 			console.log(error);
 		}
 	};
+
+	useEffect(() => {
+		SearchEvent();
+	}, []);
 
 	return (
 		<>
