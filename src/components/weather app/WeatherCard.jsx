@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 const WeatherCard = ({ weatherData }) => {
 	const [weatherIcons, setWeatherIcons] = useState("");
-	console.log(weatherData);
 	const {
 		temp,
 		humidity,
@@ -13,7 +12,6 @@ const WeatherCard = ({ weatherData }) => {
 		sunset,
 		speed,
 	} = weatherData;
-	console.log(weatherData.temp);
 
 	useEffect(() => {
 		if (weathermood) {
@@ -71,7 +69,7 @@ const WeatherCard = ({ weatherData }) => {
 				</div>
 				<div className="weatherInfo">
 					<div className="temperature">
-						<span>{temp}°Cel</span>
+						<span>{temp}°C</span>
 					</div>
 					<div className="description">
 						<div className="weatherConditon">{weathermood}</div>
