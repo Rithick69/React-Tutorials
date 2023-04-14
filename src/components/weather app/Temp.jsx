@@ -3,7 +3,7 @@ import "./style.css";
 import WeatherCard from "./WeatherCard";
 
 const Temp = () => {
-	const [search, setSearch] = useState("kolkata");
+	const [search, setSearch] = useState("Kolkata");
 	const [data, setData] = useState({});
 
 	const InputEvent = (event) => {
@@ -37,6 +37,7 @@ const Temp = () => {
 			console.log(data);
 		} catch (error) {
 			setData({});
+			alert("City Name Invalid");
 			console.log(error);
 		}
 	};
@@ -55,6 +56,7 @@ const Temp = () => {
 						autoFocus
 						id="search"
 						className="searchTerm"
+						autoComplete="off"
 						value={search}
 						onChange={InputEvent}
 					/>
