@@ -99,7 +99,7 @@ body {
 	justify-content: space-around;
 	align-items: center;
 	color: white;
-	font-size: 30px;
+	font-size: 18px;
 	font-weight: 600;
 	text-align: center;
 }
@@ -154,10 +154,6 @@ body {
 	border-radius: 5px 0 0 5px;
 	outline: none;
 	font-size: 18px;
-}
-
-.searchTerm:focus {
-	color: #00b4cc;
 }
 
 .searchButton {

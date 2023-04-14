@@ -41,22 +41,22 @@ const WeatherCard = ({ weatherData }) => {
 		}
 	}, [weathermood]);
 
-	// const currDate = new Date();
-	// const weekday = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
-	// const month = [
-	// 	"Jan",
-	// 	"Feb",
-	// 	"Mar",
-	// 	"Apr",
-	// 	"May",
-	// 	"Jun",
-	// 	"Jul",
-	// 	"Aug",
-	// 	"Sept",
-	// 	"Oct",
-	// 	"Nov",
-	// 	"Dec",
-	// ];
+	const currDate = new Date();
+	const weekday = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+	const month = [
+		"Jan",
+		"Feb",
+		"Mar",
+		"Apr",
+		"May",
+		"Jun",
+		"Jul",
+		"Aug",
+		"Sept",
+		"Oct",
+		"Nov",
+		"Dec",
+	];
 
 	let sec = sunset;
 	let date = new Date(sec * 1000);
@@ -78,7 +78,20 @@ const WeatherCard = ({ weatherData }) => {
 						</div>
 					</div>
 				</div>
-				<div className="date">{new Date().toLocaleString()}</div>
+				<div className="date">
+					<div>
+						<p style={{ fontSize: "40px", marginBottom: "0" }}>
+							{new Date().getHours()}:{new Date().getMinutes()}{" "}
+							<span style={{ fontSize: "35px", fontWeight: "400" }}>
+								{new Date().getHours() < 12 ? "AM" : "PM"}
+							</span>
+						</p>
+						<p>
+							{month[currDate.getMonth()]}, {weekday[currDate.getDay()]}{" "}
+							{currDate.getDate()}, {currDate.getFullYear()}
+						</p>
+					</div>
+				</div>
 				<div className="extra-temp">
 					<div className="temp-info-minmax">
 						<div className="two-sided-section">
@@ -86,7 +99,7 @@ const WeatherCard = ({ weatherData }) => {
 								<i className={"wi wi-sunset"}></i>
 							</p>
 							<p className="extra-info-leftside">
-								{timeStr}
+								{timeStr} {date >= 12 ? "PM" : "AM"}
 								<br />
 								Sunset
 							</p>
@@ -96,7 +109,7 @@ const WeatherCard = ({ weatherData }) => {
 								<i className={"wi wi-humidity"}></i>
 							</p>
 							<p className="extra-info-leftside">
-								{humidity}
+								{humidity}%
 								<br />
 								Humidity
 							</p>
@@ -105,7 +118,7 @@ const WeatherCard = ({ weatherData }) => {
 					<div className="weather-extra-info">
 						<div className="two-sided-section">
 							<p>
-								<i className={"wi wi-rain"}></i>
+								<i className={"wi wi-barometer"}></i>
 							</p>
 							<p className="extra-info-leftside">
 								{pressure}
@@ -118,7 +131,7 @@ const WeatherCard = ({ weatherData }) => {
 								<i className={"wi wi-strong-wind"}></i>
 							</p>
 							<p className="extra-info-leftside">
-								{speed}
+								{speed} KM/H
 								<br />
 								Speed
 							</p>
