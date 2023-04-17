@@ -7,14 +7,13 @@ import "./index.css";
 
 function Template() {
 	const [text, setText] = useState();
-	const [isCopied, setCopied] = useClipboard(text);
+	const [isCopied, setCopied] = useClipboard(text, {
+		successDuration: 1000,
+	});
 
 	// If you want to listen continuously, set the continuous property to true when calling startListening
 	const startListening = () =>
-		SpeechRecognition.startListening({
-			continuous: true,
-			language: "en-IN",
-		});
+		SpeechRecognition.startListening({ continuous: true, language: "en-IN" });
 
 	const stopListening = () => SpeechRecognition.stopListening();
 
