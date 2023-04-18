@@ -1,9 +1,9 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
-import Template from "./components/speech_to_text/Template";
+import Game from "./components/tic_tac_toe/Game";
 
 const App = () => {
-	return <Template />;
+	return <Game />;
 };
 export default App;
