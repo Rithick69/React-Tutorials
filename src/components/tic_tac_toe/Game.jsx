@@ -1,9 +1,28 @@
 import React, { useState } from "react";
 import "./index.css";
 import Square from "./Square";
+import { Palette } from "@mui/icons-material";
 
 function Game() {
-	const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
+	const [board, setBoard] = useState(["X", "", "", "", "", "", "", "", ""]);
+	const [player, setPlayer] = useState("X");
+
+	const selectedSq = (square) => {
+		setBoard(
+			board.map((val, idx) => {
+				if (idx == square && val == "") {
+					return player;
+				}
+				return val;
+			})
+		);
+
+		if (player === "X") {
+			setPlayer("O");
+		} else {
+			setPlayer("X");
+		}
+	};
 	return (
 		<>
 			<h1>Tic Tac Toe Game</h1>
@@ -14,19 +33,19 @@ function Game() {
 						<Square
 							val={board[0]}
 							selectedSq={() => {
-								alert("index: 0");
+								selectedSq(0);
 							}}
 						/>
 						<Square
 							val={board[1]}
 							selectedSq={() => {
-								alert("index: 1");
+								selectedSq(1);
 							}}
 						/>
 						<Square
 							val={board[2]}
 							selectedSq={() => {
-								alert("index: 2");
+								selectedSq(2);
 							}}
 						/>
 					</div>
@@ -34,19 +53,19 @@ function Game() {
 						<Square
 							val={board[3]}
 							selectedSq={() => {
-								alert("index: 3");
+								selectedSq(3);
 							}}
 						/>
 						<Square
 							val={board[4]}
 							selectedSq={() => {
-								alert("index: 4");
+								selectedSq(4);
 							}}
 						/>
 						<Square
 							val={board[5]}
 							selectedSq={() => {
-								alert("index: 5");
+								selectedSq(5);
 							}}
 						/>
 					</div>
@@ -54,19 +73,19 @@ function Game() {
 						<Square
 							val={board[6]}
 							selectedSq={() => {
-								alert("index: 6");
+								selectedSq(6);
 							}}
 						/>
 						<Square
 							val={board[7]}
 							selectedSq={() => {
-								alert("index: 7");
+								selectedSq(7);
 							}}
 						/>
 						<Square
 							val={board[8]}
 							selectedSq={() => {
-								alert("index: 8");
+								selectedSq(8);
 							}}
 						/>
 					</div>
