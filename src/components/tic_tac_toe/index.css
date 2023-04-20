@@ -43,3 +43,7 @@ h1 {
 	color: black;
 	font-weight: 600;
 }
+
+.square:active {
+	background-color: #64f4c4;
+}

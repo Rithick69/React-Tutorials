@@ -1,16 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
 import Square from "./Square";
-import { Palette } from "@mui/icons-material";
+import { Patterns } from "./Patterns";
 
 function Game() {
-	const [board, setBoard] = useState(["X", "", "", "", "", "", "", "", ""]);
+	const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
 	const [player, setPlayer] = useState("X");
+	const [result, setResult] = useState({ winner: "none", state: "none" });
+
+	useEffect(() => {
+		checkWin();
+	}, [board]);
+
+	useEffect(() => {
+		if (result.state !== "none") {
+			alert("Game Over", result.winner);
+		}
+	}, [result]);
 
 	const selectedSq = (square) => {
 		setBoard(
 			board.map((val, idx) => {
-				if (idx == square && val == "") {
+				if (idx === square && val === "") {
 					return player;
 				}
 				return val;
@@ -22,6 +33,23 @@ function Game() {
 		} else {
 			setPlayer("X");
 		}
+	};
+
+	const checkWin = () => {
+		Patterns.forEach((curr) => {
+			const firstPlayer = board[curr[0]];
+			if (firstPlayer === "") return;
+			let foundWinner = true;
+			curr.forEach((idx) => {
+				if (board[idx] !== firstPlayer) {
+					foundWinner = false;
+				}
+			});
+
+			if (foundWinner) {
+				setResult({ winner: player, state: "won" });
+			}
+		});
 	};
 	return (
 		<>
