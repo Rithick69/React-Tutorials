@@ -5,16 +5,22 @@ import { Patterns } from "./Patterns";
 
 function Game() {
 	const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
-	const [player, setPlayer] = useState("X");
+	const [player, setPlayer] = useState("O");
 	const [result, setResult] = useState({ winner: "none", state: "none" });
 
 	useEffect(() => {
 		checkWin();
+		checkTie();
+		if (player === "X") {
+			setPlayer("O");
+		} else {
+			setPlayer("X");
+		}
 	}, [board]);
 
 	useEffect(() => {
 		if (result.state !== "none") {
-			alert("Game Over", result.winner);
+			alert(`Game Over ${result.winner}`);
 		}
 	}, [result]);
 
@@ -27,12 +33,6 @@ function Game() {
 				return val;
 			})
 		);
-
-		if (player === "X") {
-			setPlayer("O");
-		} else {
-			setPlayer("X");
-		}
 	};
 
 	const checkWin = () => {
@@ -50,6 +50,19 @@ function Game() {
 				setResult({ winner: player, state: "won" });
 			}
 		});
+	};
+	const checkTie = () => {
+		let filledBoxes = true;
+
+		board.forEach((square) => {
+			if (square === "") {
+				filledBoxes = false;
+			}
+		});
+
+		if (filledBoxes) {
+			setResult({ winner: "No One", state: "Tie" });
+		}
 	};
 	return (
 		<>
