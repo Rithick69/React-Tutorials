@@ -1,9 +1,10 @@
 import React from "react";
 
 function Square({ val, selectedSq }) {
+	const style = value === "X" ? "box x" : "box o";
 	return (
 		<>
-			<div className="col-4 square" onClick={selectedSq}>
+			<div className={style} onClick={selectedSq}>
 				{val}
 			</div>
 		</>
