@@ -1,10 +1,10 @@
 import React from "react";
 
-function Square({ val, selectedSq }) {
-	const style = value === "X" ? "box x" : "box o";
+function Square({ val, onClick }) {
+	const style = val === "X" ? "box x" : "box o";
 	return (
 		<>
-			<div className={style} onClick={selectedSq}>
+			<div className={style} onClick={onClick}>
 				{val}
 			</div>
 		</>
