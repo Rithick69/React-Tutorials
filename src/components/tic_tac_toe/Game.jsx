@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "./index.css";
-import Square from "./Square";
+import "./style.css";
 import { Patterns } from "./Patterns";
+import Board from "./Board";
 
 function Game() {
-	const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
+	const [board, setBoard] = useState(Array(9).fill(""));
 	const [player, setPlayer] = useState("O");
 	const [result, setResult] = useState({ winner: "none", state: "none" });
 
@@ -72,8 +72,11 @@ function Game() {
 	};
 	return (
 		<>
-			<h1>Tic Tac Toe Game</h1>
-
+			<div className="App">
+				<Board board={board} onClick={selectedSq} />
+			</div>
+			{/* <h1>Tic Tac Toe Game</h1> */}
+			{/*
 			<div className="app">
 				<div className="board">
 					<div className="row">
@@ -137,7 +140,7 @@ function Game() {
 						/>
 					</div>
 				</div>
-			</div>
+			</div> */}
 		</>
 	);
 }
