@@ -1,146 +1,72 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./style.css";
 import { Patterns } from "./Patterns";
 import Board from "./Board";
+import ScoreBoard from "./ScoreBoard";
 
 function Game() {
 	const [board, setBoard] = useState(Array(9).fill(""));
-	const [player, setPlayer] = useState("O");
-	const [result, setResult] = useState({ winner: "none", state: "none" });
+	const [xPlaying, setXPlaying] = useState(true);
+	const [scores, setScores] = useState({ xScore: 0, oScore: 0 });
+	const [gameOver, setGameOver] = useState(false);
 
-	useEffect(() => {
-		checkWin();
-		checkTie();
-		if (player === "X") {
-			setPlayer("O");
-		} else {
-			setPlayer("X");
-		}
-	}, [board]);
-
-	useEffect(() => {
-		if (result.state !== "none") {
-			alert(`Game Over Winner: ${result.winner}`);
-			restartGame();
-		}
-	}, [result]);
-
-	const selectedSq = (square) => {
-		setBoard(
-			board.map((val, idx) => {
-				if (idx === square && val === "") {
-					return player;
-				}
-				return val;
-			})
-		);
-	};
-
-	const checkWin = () => {
-		Patterns.forEach((curr) => {
-			const firstPlayer = board[curr[0]];
-			if (firstPlayer === "") return;
-			let foundWinner = true;
-			curr.forEach((idx) => {
-				if (board[idx] !== firstPlayer) {
-					foundWinner = false;
-				}
-			});
-
-			if (foundWinner) {
-				setResult({ winner: player, state: "won" });
-			}
-		});
-	};
-	const checkTie = () => {
-		let filledBoxes = true;
-
-		board.forEach((square) => {
-			if (square === "") {
-				filledBoxes = false;
+	const handleBoxClick = (boxIdx) => {
+		// Step 1: Update the board
+		const updatedBoard = board.map((value, idx) => {
+			if (idx === boxIdx) {
+				return xPlaying ? "X" : "O";
+			} else {
+				return value;
 			}
 		});
 
-		if (filledBoxes) {
-			setResult({ winner: "No One", state: "Tie" });
+		setBoard(updatedBoard);
+
+		// Step 2: Check if either player has won the game
+		const winner = checkWinner(updatedBoard);
+
+		if (winner) {
+			if (winner === "O") {
+				let { oScore } = scores;
+				oScore += 1;
+				setScores({ ...scores, oScore });
+			} else {
+				let { xScore } = scores;
+				xScore += 1;
+				setScores({ ...scores, xScore });
+			}
+		}
+
+		// Step 3: Change active player
+		setXPlaying(!xPlaying);
+	};
+
+	const checkWinner = (board) => {
+		for (let i = 0; i < Patterns.length; i++) {
+			const [x, y, z] = Patterns[i];
+
+			// Iterate through win conditions and check if either player satisfies them
+			if (board[x] && board[x] === board[y] && board[y] === board[z]) {
+				setGameOver(true);
+				return board[x];
+			}
 		}
 	};
 
-	const restartGame = () => {
-		setBoard(["", "", "", "", "", "", "", "", ""]);
-		setPlayer("O");
+	const resetGame = () => {
+		setGameOver(false);
+		setBoard(Array(9).fill(""));
+		setXPlaying(xPlaying);
 	};
 	return (
 		<>
 			<div className="App">
-				<Board board={board} onClick={selectedSq} />
+				<ScoreBoard scores={scores} xPlaying={xPlaying} />
+				<Board board={board} onClick={gameOver ? resetGame : handleBoxClick} />
+				<button className="reset-btn" onClick={resetGame}>
+					Reset
+				</button>
 			</div>
-			{/* <h1>Tic Tac Toe Game</h1> */}
-			{/*
-			<div className="app">
-				<div className="board">
-					<div className="row">
-						<Square
-							val={board[0]}
-							selectedSq={() => {
-								selectedSq(0);
-							}}
-						/>
-						<Square
-							val={board[1]}
-							selectedSq={() => {
-								selectedSq(1);
-							}}
-						/>
-						<Square
-							val={board[2]}
-							selectedSq={() => {
-								selectedSq(2);
-							}}
-						/>
-					</div>
-					<div className="row">
-						<Square
-							val={board[3]}
-							selectedSq={() => {
-								selectedSq(3);
-							}}
-						/>
-						<Square
-							val={board[4]}
-							selectedSq={() => {
-								selectedSq(4);
-							}}
-						/>
-						<Square
-							val={board[5]}
-							selectedSq={() => {
-								selectedSq(5);
-							}}
-						/>
-					</div>
-					<div className="row">
-						<Square
-							val={board[6]}
-							selectedSq={() => {
-								selectedSq(6);
-							}}
-						/>
-						<Square
-							val={board[7]}
-							selectedSq={() => {
-								selectedSq(7);
-							}}
-						/>
-						<Square
-							val={board[8]}
-							selectedSq={() => {
-								selectedSq(8);
-							}}
-						/>
-					</div>
-				</div>
-			</div> */}
 		</>
 	);
 }
