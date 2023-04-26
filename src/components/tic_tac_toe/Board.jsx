@@ -6,7 +6,9 @@ function Board({ board, onClick }) {
 		<>
 			<div className="board">
 				{board.map((value, idx) => {
-					return <Square val={value} onClick={() => onClick(idx)} />;
+					return (
+						<Square val={value} onClick={() => value === "" && onClick(idx)} />
+					);
 				})}
 			</div>
 		</>

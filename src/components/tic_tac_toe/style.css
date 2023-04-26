@@ -22,6 +22,21 @@ code {
 		monospace;
 }
 
+.main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.MuiButton-root {
+	border-radius: 50% !important;
+}
+
+.MuiSvgIcon-root {
+	width: 2rem !important;
+	height: 3rem !important;
+}
+
 .board {
 	display: grid;
 	grid-template-columns: repeat(3, 6rem);
@@ -79,7 +94,7 @@ code {
 	width: 20rem;
 	font-size: 1.5rem;
 	background-color: white;
-	margin: 3rem auto;
+	margin: 3rem 2rem;
 	box-shadow: 0px 0px 8px #888888;
 	border-radius: 0.5rem;
 	font-weight: bold;
