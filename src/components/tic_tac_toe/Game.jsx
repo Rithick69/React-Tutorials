@@ -3,6 +3,7 @@ import "./style.css";
 import { Patterns } from "./Patterns";
 import Board from "./Board";
 import ScoreBoard from "./ScoreBoard";
+import { Tooltip } from "@mui/material";
 
 function Game() {
 	const [board, setBoard] = useState(Array(9).fill(""));
@@ -56,16 +57,28 @@ function Game() {
 	const resetGame = () => {
 		setGameOver(false);
 		setBoard(Array(9).fill(""));
-		setXPlaying(xPlaying);
+	};
+
+	const resetScore = () => {
+		setScores({ xScore: 0, oScore: 0 });
+		setGameOver(false);
+		setBoard(Array(9).fill(""));
 	};
 	return (
 		<>
 			<div className="App">
-				<ScoreBoard scores={scores} xPlaying={xPlaying} />
+				<h1 className="text-center mt-5">Tic Tac Toe</h1>
+				<ScoreBoard
+					scores={scores}
+					xPlaying={xPlaying}
+					resetScore={resetScore}
+				/>
 				<Board board={board} onClick={gameOver ? resetGame : handleBoxClick} />
-				<button className="reset-btn" onClick={resetGame}>
-					Reset
-				</button>
+				<Tooltip title="Reset Board">
+					<button className="reset-btn" onClick={resetGame}>
+						Reset
+					</button>
+				</Tooltip>
 			</div>
 		</>
 	);

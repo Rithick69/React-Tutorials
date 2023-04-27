@@ -1,8 +1,8 @@
 import { Refresh } from "@mui/icons-material";
-import { Button } from "@mui/material";
+import { Button, Tooltip } from "@mui/material";
 import React from "react";
 
-function ScoreBoard({ scores, xPlaying }) {
+function ScoreBoard({ scores, xPlaying, resetScore }) {
 	const { xScore, oScore } = scores;
 	return (
 		<>
@@ -16,9 +16,11 @@ function ScoreBoard({ scores, xPlaying }) {
 					</span>
 				</div>
 				<div>
-					<Button>
-						<Refresh />
-					</Button>
+					<Tooltip title="Reset Score">
+						<Button onClick={resetScore}>
+							<Refresh />
+						</Button>
+					</Tooltip>
 				</div>
 			</div>
 		</>
