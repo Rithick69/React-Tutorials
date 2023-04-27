@@ -1,11 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+
 * {
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
 	margin: 0;
 	background-color: #efefef;
 	font-family: "Fredoka", sans-serif;
+}
+
+h1 {
+	font-family: "Patrick Hand", cursive;
+	font-weight: 900;
+	color: rgb(44, 135, 255);
+	letter-spacing: 2px;
 }
 
 body {
@@ -26,6 +37,7 @@ code {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: row;
 }
 
 .MuiButton-root {
@@ -76,7 +88,7 @@ code {
 	border-radius: 0.5rem;
 	background-color: rgb(0, 110, 255);
 	color: white;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	padding: 0.5rem 1rem;
 	margin: 2rem auto;
 	display: block;
@@ -95,6 +107,7 @@ code {
 	font-size: 1.5rem;
 	background-color: white;
 	margin: 3rem 2rem;
+	margin-left: 6rem;
 	box-shadow: 0px 0px 8px #888888;
 	border-radius: 0.5rem;
 	font-weight: bold;
@@ -120,4 +133,17 @@ code {
 
 .inactive {
 	border-bottom: 5px solid transparent;
+}
+
+@media screen and (max-width: 576px) {
+	.main {
+		flex-direction: column;
+	}
+	.scoreboard {
+		margin: 2rem auto;
+		margin-bottom: 1rem;
+	}
+	.board {
+		margin-top: 1rem;
+	}
 }
